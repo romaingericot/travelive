@@ -1,7 +1,32 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+
+Review.destroy_all
+Tour.destroy_all
+Booking.destroy_all
+User.destroy_all
+
+
+puts "✅ Creating guides users"
+romain = User.create!(first_name: "Romain", last_name: "Géricot" ,password: "azerty", role: 0, description: "I lived all around the world, come to discorver it with me", email: "romain@gmail.com")
+jerome = User.create!(first_name: "Jérôme", last_name: "Toulouse" ,password: "azerty", role: 0, description: "Ask me everything you need about colors, forms and CSS .... but never about bootstrap", email: "jerome@gmail.com")
+edouard = User.create!(first_name: "Edouard", last_name: "Couter", password: "azerty", role:0, description: "If you want to play tennis, call me!", email: "edouard@gmail.com")
+fabiola = User.create!(first_name: "Fabiola", last_name: "Camargo", password: "azerty", role: 0, description: "If you want to eat come with me", email: "fabiola@gmail.com")
+
+puts "✅ Creating user"
+jojo = User.create!(first_name: "Jonathan", last_name: "Serafini", password: "azerty", role: 1, description: "I want to travel again!!!", email: "jonathan@gmail.com")
+
+puts "✅ Creating tours"
+afrique = Tour.create!(name: "Kruger National Park safari", country: "South Africa", capacity: 10, date: Date.new(2020, 7, 29), duration: 120, language: "french", user: romain, price: 25)
+arcachon = Tour.create!(name: "Le tour d'arcachon", city: "Arcachon", country: "France", capacity: 8, date: Date.new(2020, 8, 25), duration: 60, language: "french", user: jerome, price: 10)
+paris = Tour.create!(name: "Wimbledon", city: "Londres", country: "Anglaterre", capacity: 8, date: Date.new(2020, 8, 10), duration: 90, language: "french", user: edouard, price: 15)
+recide = Tour.create!(name: "Le brésil autrement", city: "Recife", country: "Brésil", capacity: 10, date: Date.new(2020, 10, 10), duration: 90, language: "french", user: fabiola, price: 10)
+
+puts "✅ Adding photos to tours"
+photo1_romain = URI.open("https://images.unsplash.com/photo-1561776138-b72e912b5187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
+photo2_romain = URI.open("https://images.unsplash.com/photo-1561776284-b741c036b32e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1663&q=80")
+photo3_romain = URI.open("https://images.unsplash.com/photo-1561746983-0c4ff9b622d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1608&q=80")
+afrique.images.attach(io: photo1_romain, filename: 'photo.png', content_type: 'image/png')
+afrique.images.attach(io: photo2_romain, filename: 'photo.png', content_type: 'image/png')
+afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
+afrique.save!
