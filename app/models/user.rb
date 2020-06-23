@@ -10,8 +10,6 @@ class User < ApplicationRecord
   has_many :tours
   has_many :bookings
 
-  validates :email, confirmation: true
-  validates :email_confirmation, presence: true
   validates :email, uniqueness: true
   validates :password, length: { in: 6..20 }
   validates :first_name, presence: true

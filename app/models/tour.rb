@@ -9,12 +9,12 @@ class Tour < ApplicationRecord
   validates :name, presence: true
   validates :city, presence: true
   validates :country, presence: true
-  validates :date, presence: true, availability: true
-  validates :time, presence: true, availability: true
-  validates :duration, presence: true, availability: true
+  validates :date, presence: true
+  validates :time, presence: true
+  validates :duration, presence: true
   validates :description, length: { maximum: 500,
     too_long: "%{count} characters is the maximum allowed" }
   validates :language, presence: true
-  validates :categories, presence: true
+  validates :category, presence: true
   validates :price, presence: true
 end
