@@ -17,10 +17,10 @@ puts "✅ Creating user"
 jojo = User.create!(first_name: "Jonathan", last_name: "Serafini", password: "azerty", role: 1, description: "I want to travel again!!!", email: "jonathan@gmail.com")
 
 puts "✅ Creating tours"
-afrique = Tour.create!(name: "Kruger National Park safari", country: "South Africa", capacity: 10, date: Date.new(2020, 7, 29), duration: 120, language: "french", user: romain, price: 25)
-arcachon = Tour.create!(name: "Le tour d'arcachon", city: "Arcachon", country: "France", capacity: 8, date: Date.new(2020, 8, 25), duration: 60, language: "french", user: jerome, price: 10)
-paris = Tour.create!(name: "Wimbledon", city: "Londres", country: "Anglaterre", capacity: 8, date: Date.new(2020, 8, 10), duration: 90, language: "french", user: edouard, price: 15)
-recide = Tour.create!(name: "Le brésil autrement", city: "Recife", country: "Brésil", capacity: 10, date: Date.new(2020, 10, 10), duration: 90, language: "french", user: fabiola, price: 10)
+afrique = Tour.create!(name: "Kruger National Park safari", city: "Kruger National Park", country: "South Africa", capacity: 10, date: Date.new(2020, 7, 29), duration: 120, language: "french", user: romain, price: 25, category: "safari", time: Time.now)
+arcachon = Tour.create!(name: "Le tour d'arcachon", city: "Arcachon", country: "France", capacity: 8, date: Date.new(2020, 8, 25), duration: 60, language: "french", user: jerome, price: 10, category: "mer", time: Time.now)
+paris = Tour.create!(name: "Wimbledon", city: "Londres", country: "Anglaterre", capacity: 8, date: Date.new(2020, 8, 10), duration: 90, language: "french", user: edouard, price: 15, category: "sport", time: Time.now)
+recide = Tour.create!(name: "Le brésil autrement", city: "Recife", country: "Brésil", capacity: 10, date: Date.new(2020, 10, 10), duration: 90, language: "french", user: fabiola, price: 10, category: "insolite", time: Time.now)
 
 puts "✅ Adding photos to tours"
 photo1_romain = URI.open("https://images.unsplash.com/photo-1561776138-b72e912b5187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
@@ -30,3 +30,8 @@ afrique.images.attach(io: photo1_romain, filename: 'photo.png', content_type: 'i
 afrique.images.attach(io: photo2_romain, filename: 'photo.png', content_type: 'image/png')
 afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
 afrique.save!
+
+photo1_jerome = URI.open("https://images.unsplash.com/photo-1589967127698-03987ca17cb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+arcachon.images.attach(io: photo1_jerome, filename: 'photo.png', content_type: 'image/png')
+arcachon.save!
+
