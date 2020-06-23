@@ -23,22 +23,22 @@ londres = Tour.create!(name: "Wimbledon", city: "Londres", country: "Anglaterre"
 recife = Tour.create!(name: "Le brésil autrement", city: "Recife", country: "Brésil", capacity: 10, date: Date.new(2020, 10, 10), duration: 90, language: "french", user: fabiola, price: 10, category: "insolite", time: Time.now)
 
 puts "✅ Adding photos to tours"
-photo1_romain = URI.open("https://images.unsplash.com/photo-1561776138-b72e912b5187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80.png")
-photo2_romain = URI.open("https://images.unsplash.com/photo-1561776284-b741c036b32e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1663&q=80.png")
-photo3_romain = URI.open("https://images.unsplash.com/photo-1561746983-0c4ff9b622d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1608&q=80.png")
-afrique.images.attach(io: photo1_romain, filename: 'photo.png', content_type: 'image/png')
-afrique.images.attach(io: photo2_romain, filename: 'photo.png', content_type: 'image/png')
-afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
+photo1_romain = URI.open("https://images.pexels.com/photos/631317/pexels-photo-631317.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")
+# photo2_romain = URI.open("https://images.unsplash.com/photo-1561776284-b741c036b32e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1663&q=80.png")
+# photo3_romain = URI.open("https://images.unsplash.com/photo-1561746983-0c4ff9b622d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1608&q=80.png")
+afrique.images.attach(io: photo1_romain, filename: 'photo.jpeg', content_type: 'image/jpeg')
+# afrique.images.attach(io: photo2_romain, filename: 'photo.png', content_type: 'image/png')
+# afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
 afrique.save!
 
-photo1_jerome = URI.open("https://images.unsplash.com/photo-1589967127698-03987ca17cb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80.png")
-arcachon.images.attach(io: photo1_jerome, filename: 'photo.png', content_type: 'image/png')
+photo1_jerome = URI.open("https://images.pexels.com/photos/458983/pexels-photo-458983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")
+arcachon.images.attach(io: photo1_jerome, filename: 'photo.jpeg', content_type: 'image/jpeg')
 arcachon.save!
 
-photo1_edouard = URI.open("https://images.unsplash.com/photo-1580763850690-44fd66eb2863?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80.png")
-londres.images.attach(io: photo1_edouard, filename: 'photo.png', content_type: 'image/png')
+photo1_edouard = URI.open("https://images.pexels.com/photos/1619860/pexels-photo-1619860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")
+londres.images.attach(io: photo1_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
 londres.save!
 
-photo1_fabiola = URI.open("https://images.unsplash.com/photo-1563455227142-d0f82238d6f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2782&q=80.png")
-recife.images.attach(io: photo1_fabiola, filename: 'photo.png', content_type: 'image/png')
+photo1_fabiola = URI.open("https://images.pexels.com/photos/4631160/pexels-photo-4631160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")
+recife.images.attach(io: photo1_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 recife.save!
