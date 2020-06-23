@@ -11,6 +11,8 @@
   <p><%= @tour.language %></p>
   <p><%= @tour.category %></p>
   <p><%= @tour.price %></p>
-  <%= cl_image_tag @tour.images.key %>
+  <% @tour.images.each do |image| %>
+  <%= cl_image_tag image.key %>
+  <% end %>
 </div>
 
