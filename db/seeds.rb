@@ -42,3 +42,13 @@ londres.save!
 photo1_fabiola = URI.open("https://images.pexels.com/photos/4631160/pexels-photo-4631160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")
 recife.images.attach(io: photo1_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 recife.save!
+<<<<<<< HEAD
+=======
+
+puts "✅ Creating a booking"
+b = Booking.new
+b.tour = afrique
+b.user = jojo
+b.progress = 0
+b.save!
+>>>>>>> e559b3603e9c58bb36e117461f004f7fccd960f2
