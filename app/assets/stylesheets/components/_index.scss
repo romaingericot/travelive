@@ -2,3 +2,32 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "footer";
+@import "card";
+
+
+
+h2 {
+    font-family: HK Grotesk;
+    font-style: SemiBold;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 21px;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    padding: 25px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    margin-bottom: 150px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+
+img {
+width: 100%;
+height: auto;
+}
