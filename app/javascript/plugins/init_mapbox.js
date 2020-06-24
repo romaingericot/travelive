@@ -9,12 +9,12 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/fguilloucamargo/ckbt4oswm0jqq1jnrnacxwpan',
       center: [0, 15],
-      zoom: 1.3
+      zoom: 1
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      new mapboxgl.Marker( {color: '#CC3363', scale: 0.7})
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
     });
