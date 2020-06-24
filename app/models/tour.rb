@@ -1,10 +1,12 @@
 class Tour < ApplicationRecord
   belongs_to :user
-
-  has_many_attached :images
-
   has_many :bookings
   has_many :reviews, through: :bookings
+
+  geocoded_by :city
+  after_validation :geocode
+
+  has_many_attached :images
 
   validates :name, presence: true
   validates :city, presence: true
