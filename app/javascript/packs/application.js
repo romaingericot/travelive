@@ -38,8 +38,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  initLiveStream();
-  attachCamera();
-  detachCamera();
-  Streamer();
 });
+
+initLiveStream();
+// attachCamera();
+// detachCamera();
+// Streamer();
