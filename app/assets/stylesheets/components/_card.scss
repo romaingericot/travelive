@@ -33,13 +33,27 @@
     padding-left: 0px;
     padding-bottom: 0px;
     margin-right: 0px;
-    margin-left: 20px;
+    margin-left: -20px;
+}
+
+.card-trip > img {
+  height: 300px;
+  width: 100%;
+}
+
+.col.mb-3 {
+    width: 322px;
+    height: 461px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-right: 0px;
+    margin-left: -20px;
 }
 
 
-
-
-body {
+.card-body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
