@@ -20,7 +20,14 @@
 
 .card-click {
   margin: 20px;
+  font-family: 'Roboto'
 
+}
+
+.card-click h5 {
+  color: #619BBD;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .card-click p {
@@ -28,6 +35,16 @@
   color: black;
 }
 
-.card-click:hover {
+a:hover {
+  text-decoration: none;
+}
 
+.card-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-info {
+  margin: 25px;
 }

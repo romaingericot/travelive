@@ -4,12 +4,19 @@
   <%= cl_image_tag tour.images[0].key %>
   <div class="card-click">
     <h5><%= tour.name %></h5>
-    <p><%= tour.date %></p>
-    <p>Durée - <%= tour.duration %> minutes</p>
-    <p>Langue - <%= tour.language.capitalize %></p>
+    <div class="card-info">
+      <p><%= tour.date %></p>
+      <p>Durée - <%= tour.duration %> minutes</p>
+      <p>Langue - <%= tour.language.capitalize %></p>
+    </div>
     <hr>
-    <div class="inline">
-      <p> <%= tour.user.first_name %></p>
+    <div class="card-inline">
+      <% if tour.user.photo.attached? %>
+            <%= cl_image_tag "#{tour.user.photo.key}", crop: :fill, class: "avatar" %>
+      <% else %>
+             <%= image_tag tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill, class: "avatar" %>
+      <% end %>
+
       <p>Prix - <%= tour.price %>/personne</p>
     </div>
   </div>
