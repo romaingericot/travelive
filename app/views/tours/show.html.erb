@@ -33,6 +33,11 @@
     <p><%= @tour.description %></p>
     <p><%= @tour.price %></p>
     <p><%= @tour.category %></p>
+    
+     <% @tour.images.each do |image| %>
+  <%= cl_image_tag image.key %>
+  <% end %>
   </div>
+
 </div>
 
