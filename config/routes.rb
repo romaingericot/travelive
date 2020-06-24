@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :reviews
     end
   end
+  get 'live', to: 'tours#live'
+  get 'livetest', to: 'tours#livetest'
 end
