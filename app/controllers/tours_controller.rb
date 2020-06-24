@@ -1,11 +1,11 @@
 class ToursController < ApplicationController
   def index
-    @tours = Tour.all
-    @markers = []
-    @tours.each do |tour|
-      @markers << {
+    @tours = Tour.geocoded
+    @markers = @tours.map do |tour|
+      {
         lat: tour.latitude,
-        lng: tour.longitude
+        lng: tour.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { tour: tour })
       }
     end
   end
