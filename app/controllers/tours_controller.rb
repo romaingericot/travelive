@@ -1,5 +1,13 @@
 class ToursController < ApplicationController
   def index
+    @tours = Tour.all
+    @markers = []
+    @tours.each do |tour|
+      @markers << {
+        lat: tour.latitude,
+        lng: tour.longitude
+      }
+    end
   end
 
   def show

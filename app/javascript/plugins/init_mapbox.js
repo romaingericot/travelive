@@ -9,7 +9,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/fguilloucamargo/ckbt4oswm0jqq1jnrnacxwpan',
       center: [0, 15],
-      zoom: 1
+      zoom: 0.9
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
