@@ -1,0 +1,17 @@
+
+
+ <%= link_to tour_path(tour) do %>
+  <%= cl_image_tag tour.images[0].key %>
+  <div class="card-click">
+    <h5><%= tour.name %></h5>
+    <p><%= tour.date %></p>
+    <p>Durée - <%= tour.duration %> minutes</p>
+    <p>Langue - <%= tour.language.capitalize %></p>
+    <hr>
+    <div class="inline">
+      <p> <%= tour.user.first_name %></p>
+      <p>Prix - <%= tour.price %>/personne</p>
+    </div>
+  </div>
+<% end %>
+
