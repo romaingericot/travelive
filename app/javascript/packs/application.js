@@ -23,12 +23,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import {initLiveStream} from '@cloudinary/js-streaming'
-import {attachCamera, detachCamera} from '@cloudinary/js-streaming';
-import {Streamer} from '@cloudinary/js-streaming';
-// import {initLiveStream} from '../components/js-streaming';
-// import {attachCamera, detachCamera} from 'components/js-streaming';
-// import {Streamer} from 'components/js-streaming';
+// import {initLiveStream} from '@cloudinary/js-streaming'
+// import {attachCamera, detachCamera} from '@cloudinary/js-streaming';
+// import {Streamer} from '@cloudinary/js-streaming';
+
 
 // Internal imports
 // import { initSelect2 } from '../components/init_select2';
@@ -40,7 +38,8 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
-initLiveStream();
+
 // attachCamera();
 // detachCamera();
 // Streamer();
+// initLiveStream();
