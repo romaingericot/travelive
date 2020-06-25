@@ -1,0 +1,23 @@
+.body-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.body-container .presentation {
+  width: 400px;
+}
+
+.body-container img {
+  width: 40%;
+}
+
+.slider {
+  width: 400px;
+  length: 300px;
+  height: 300px;
+}
+
+.guidename {
+  font-weight: bold;
+}
