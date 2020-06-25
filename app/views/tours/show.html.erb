@@ -11,9 +11,9 @@
       <% else %>
              <%= image_tag @tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
       <% end %>
-
+  <div id="triangle"></div>
   </div>
-  <div class="container">
+  <div class="tab-container">
     <ul class="list-inline tabs">
       <li>
         <p class="tab">Date</p>
@@ -36,13 +36,15 @@
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
-    <p><%= @tour.description %></p>
-    <p><%= @tour.price %></p>
-    <p><%= @tour.category %></p>
-    <div class="trio">
-      <% @tour.images.each do |image| %>
-        <%= cl_image_tag image.key %>
-      <% end %>
+    <div class="container">
+      <p><%= @tour.description %></p>
+      <p><%= @tour.price %></p>
+      <p><%= @tour.category %></p>
+      <div class="trio">
+        <% @tour.images.each do |image| %>
+          <%= cl_image_tag image.key %>
+        <% end %>
+      </div>
     </div>
   </div>
 
