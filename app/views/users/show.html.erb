@@ -1,16 +1,50 @@
 <div class="container">
-  <h1>Welcome <%= @user%></h1>
-  <h2>Tours proposés</h2>
-  <% @tours.each do |tour| %>
-  <p><%= tour.name %></p>
-  <p><% tour.date %></p>
-  <% end %>
+  <h1>Bienvenue <%= @user.first_name%>, voici vous prochaines voyages !</h1>
 
-  <h2>Tours reservés</h2>
+    <% unless @tours.empty? %>
+      <h2>Tours proposés</h2>
 
-  <% @bookings.each do |booking| %>
-  <p><%= booking.tour.name %></p>
-  <p><% booking.tour.date %></p>
+      <% @tours.each do |tour| %>
+        <div class="card">
+          <%= cl_image_tag tour.images[0].key %>
+          <div class="card-click">
+            <h5><%= tour.name %></h5>
+            <div class="card-info">
+              <p><%= tour.date %></p>
+              <p>Durée - <%= tour.duration %> minutes</p>
+              <p>Langue - <%= tour.language.capitalize %></p>
+            </div>
+            <hr>
+            <div class="card-inline">
+              <% if tour.user.photo.attached? %>
+                    <%= cl_image_tag "#{tour.user.photo.key}", crop: :fill, class: "avatar" %>
+              <% else %>
+                     <%= image_tag tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill, class: "avatar" %>
+              <% end %>
+
+              <p>Prix - <%= tour.price %>/personne</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+  <% unless @bookings.empty? %>
+    <h2>Tours reservés</h2>
+
+    <% @bookings.each do |booking| %>
+      <!-- <div class="card"> -->
+        <div class="card-click">
+          <%= cl_image_tag booking.tour.images[0].key %>
+          <h5><%= booking.tour.name %></h5>
+          <div class="card-info">
+            <p><%= booking.tour.date %></p>
+            <p>Durée - <%= booking.tour.duration %> minutes</p>
+            <p>Langue - <%= booking.tour.language.capitalize %></p>
+          </div>
+        </div>
+      <!-- </div> -->
+    <% end %>
   <% end %>
 
 </div>
