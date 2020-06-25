@@ -85,7 +85,7 @@ class ToursController < ApplicationController
   def tour_params
     params.require(:tour).permit(:name, :city, :country, :capacity, :date, :time, :duration, :description, :language, :category, :price)
   end
-  
+
   def set_markers(tours)
     @markers = tours.map do |tour|
       {
@@ -96,4 +96,4 @@ class ToursController < ApplicationController
     end
     @markers
   end
-
+end
