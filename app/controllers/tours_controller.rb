@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [ :index ]
+
   def index
     @tours = Tour.geocoded
     @markers = @tours.map do |tour|
@@ -12,6 +14,24 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+  end
+
+  def new
+
+  end
+
+  def create
+
+  end
+
+  def edit
+  end
+
+  def update
+
+  end
+
+  def destroy
   end
 
   def live
