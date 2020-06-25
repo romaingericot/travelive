@@ -1,12 +1,11 @@
 class BookingsController < ApplicationController
-  def index
+  def show
     @booking = Booking.first
-    @markers = [{
-          lat: @booking.tour.latitude,
-          lng: @booking.tour.longitude
-        }]
   end
 
-  def show
+  def new
+  end
+
+  def create
   end
 end

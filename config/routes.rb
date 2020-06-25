@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show]
+  get 'live', to: 'tours#live'
+  get 'livetest', to: 'tours#livetest'
 end
