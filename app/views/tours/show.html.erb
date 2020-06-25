@@ -1,4 +1,5 @@
 
+
 <div class="">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
@@ -36,17 +37,40 @@
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
-    <div class="container">
-      <p><%= @tour.description %></p>
-      <p><%= @tour.price %></p>
-      <p><%= @tour.category %></p>
-      <div class="trio">
-        <% @tour.images.each do |image| %>
-          <%= cl_image_tag image.key %>
-        <% end %>
+    <div class="body-container">
+      <div class="presentation">
+        <h3>Description détaillée de votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
+        <p><%= @tour.description %></p>
+        <div class="price">
+          <p><%= @tour.price %>€</p>
+          <p id="category"><%= @tour.category %></p>
+        </div>
       </div>
+      <div class="slider">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% @tour.images.each do |image| %>
+              <% if image == @tour.images.first %>
+                <div class="carousel-item active">
+              <% else %>
+                <div class="carousel-item">
+              <% end %>
+                <%= cl_image_tag image.key, class: "d-block w-100" %>
+              </div>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
 </div>
-
