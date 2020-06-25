@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
   def show
-    @booking = Booking.first
+    @booking = Booking.all
   end
 
   def new
+    @booking = Booking.new
   end
 
   def create
