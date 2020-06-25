@@ -16,5 +16,4 @@ class ToursController < ApplicationController
 
   def live
   end
-
 end

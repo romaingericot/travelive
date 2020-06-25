@@ -40,7 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
-initLiveStream();
+
 // attachCamera();
 // detachCamera();
 // Streamer();
+initLiveStream();

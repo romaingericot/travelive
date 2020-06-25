@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     end
   end
   get 'live', to: 'tours#live'
+  post 'live', to: 'tours#live'
   get 'livetest', to: 'tours#livetest'
+  post 'livetest', to: 'tours#livetest'
 end

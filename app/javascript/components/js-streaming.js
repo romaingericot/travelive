@@ -1,6 +1,6 @@
 const {initLiveStream, attachCamera, detachCamera} = cloudinaryJsStreaming;
-const CLOUD_NAME = 'dzghetxbv';
-const UPLOAD_PRESET = 'j0gteuwh';
+const CLOUD_NAME = ['dzghetxbv'];
+const UPLOAD_PRESET = ['j0gteuwh'];
 let liveStream, publicId, url;
 
 function setText(id, text) {
