@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome <%= @user%></h1>
+  <h2>Tours proposés</h2>
+  <% @tours.each do |tour| %>
+  <p><%= tour.name %></p>
+  <p><% tour.date %></p>
+  <% end %>
+
+  <h2>Tours reservés</h2>
+
+  <% @bookings.each do |booking| %>
+  <p><%= booking.tour.name %></p>
+  <p><% booking.tour.date %></p>
+  <% end %>
+
+</div>
