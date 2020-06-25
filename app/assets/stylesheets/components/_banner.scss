@@ -1,7 +1,10 @@
 .banner {
   background-size: cover;
+  height: 649px;
   background-position: center;
   padding: 150px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .banner h2 {
@@ -19,4 +22,22 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
+}
+
+.banner img {
+  width: 50px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#triangle {
+    position: relative;
+    top: 120px;
+    width: auto;
+    length: 155px;
+    border-left: 1280px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 130px solid #f4f4f4;
 }

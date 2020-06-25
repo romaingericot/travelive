@@ -28,7 +28,7 @@ photo2_romain = URI.open("https://images.pexels.com/photos/4634620/pexels-photo-
 photo3_romain = URI.open("https://images.unsplash.com/photo-1561746983-0c4ff9b622d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1608&q=80.png")
 afrique.images.attach(io: photo1_romain, filename: 'photo.jpeg', content_type: 'image/jpeg')
 afrique.images.attach(io: photo2_romain, filename: 'photo.png', content_type: 'image/png')
-# afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
+afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'image/png')
 afrique.save!
 
 photo1_jerome = URI.open("https://images.pexels.com/photos/458983/pexels-photo-458983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=375&w=630")

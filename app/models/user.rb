@@ -4,14 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_one_attached :photo
 
   has_many :tours
   has_many :bookings
+  has_one_attached :photo
 
   validates :email, uniqueness: true
   validates :password, length: { in: 6..20 }
+  GENDER = ["Homme", "Femme"]
+  # validates :gender, inclusion: { in: GENDER }
   # validates :first_name, presence: true
   # validates :last_name, presence: true
   # validates :description, length: { maximum: 300,

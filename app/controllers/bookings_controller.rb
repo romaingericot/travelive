@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  def index
-    @booking = Booking.first
+  def show
+    @booking = Booking.all
   end
 
-  def show
+  def new
+    @booking = Booking.new
+  end
+
+  def create
   end
 end

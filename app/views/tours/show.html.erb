@@ -1,35 +1,42 @@
 
 <div class="">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images.key %>);">
-    <div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
+
       <h2><%= @tour.name %></h2>
       <p><%= @tour.city %></p>
       <p><%= @tour.country %></p>
-    </div>
+
+      <% if @tour.user.photo.attached? %>
+            <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
+      <% else %>
+             <%= image_tag @tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
+      <% end %>
+  <div id="triangle"></div>
   </div>
-  <div class="container">
+  <div class="tab-container">
     <ul class="list-inline tabs">
       <li>
         <p class="tab">Date</p>
-        <p><%= @tour.date %></p>
+        <p class="infos"><%= @tour.date.strftime("%d %B") %></p>
       </li>
       <li>
-        <p class="tab">Time</p>
-        <p><%= @tour.time %></p>
+        <p class="tab">Heure</p>
+        <p class="infos"><%= @tour.time.strftime("%I:%M %p") %></p>
       </li>
       <li>
-        <p class="tab">Duration</p>
-        <p> Duration <%= @tour.duration %></p>
+        <p class="tab">Durée</p>
+        <p class="infos"><%= @tour.duration %>min</p>
       </li>
       <li>
-        <p class="tab">Language</p>
-        <p><%= @tour.language %></p>
+        <p class="tab">Langage</p>
+        <p class="infos"><%= @tour.language %></p>
       </li>
       <li>
-        <p class="tab">Capacity</p>
-        <p><%= @tour.capacity %></p>
+        <p class="tab">Capacité</p>
+        <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
+<<<<<<< HEAD
     <p><%= @tour.description %></p>
     <p><%= @tour.price %></p>
     <p><%= @tour.category %></p>
@@ -37,6 +44,18 @@
      <% @tour.images.each do |image| %>
   <%= cl_image_tag image.key %>
   <% end %>
+=======
+    <div class="container">
+      <p><%= @tour.description %></p>
+      <p><%= @tour.price %></p>
+      <p><%= @tour.category %></p>
+      <div class="trio">
+        <% @tour.images.each do |image| %>
+          <%= cl_image_tag image.key %>
+        <% end %>
+      </div>
+    </div>
+>>>>>>> dd9ff80a11aa7d9a50305f0c7ce058b5fffcbb88
   </div>
 
 </div>
