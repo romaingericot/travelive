@@ -36,6 +36,15 @@
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
+<<<<<<< HEAD
+    <p><%= @tour.description %></p>
+    <p><%= @tour.price %></p>
+    <p><%= @tour.category %></p>
+
+     <% @tour.images.each do |image| %>
+  <%= cl_image_tag image.key %>
+  <% end %>
+=======
     <div class="container">
       <p><%= @tour.description %></p>
       <p><%= @tour.price %></p>
@@ -46,7 +55,7 @@
         <% end %>
       </div>
     </div>
+>>>>>>> dd9ff80a11aa7d9a50305f0c7ce058b5fffcbb88
   </div>
 
 </div>
-

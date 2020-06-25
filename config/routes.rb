@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   root to: 'tours#index'
   resources :tours, shallow: true do
     resources :bookings, only: [:new, :create, :show, :destroy] do
-    resources :reviews, only: [:new, :create, :destroy]
+      resources :reviews, only: [:new, :create, :destroy]
     end
+    get 'live', to: 'tours#live'
   end
   resources :users, only: [:show]
-  get 'live', to: 'tours#live'
-  get 'livetest', to: 'tours#livetest'
 end

@@ -2,12 +2,12 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "streaming";
 @import "banner";
 @import "tab";
 @import "footer";
 @import "card";
 @import "map";
+@import "dailyco";
 
 
 h2 {
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 *, *::before, *::after {
     box-sizing: border-box;
 }
-user agent stylesheet
+
 h5 {
     display: block;
     font-size: 0.83em;
