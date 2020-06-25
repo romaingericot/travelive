@@ -1,3 +1,7 @@
+#id {
+  position: relative;
+}
+
 .mapboxgl-popup {
   // max-width: 200px;
 }
@@ -48,3 +52,22 @@ a:hover {
 .card-info {
   margin: 25px;
 }
+
+.map-search {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  color: #619BBD;
+  position: absolute;
+  right: 70%;
+  bottom: 10%;
+}
+
+.btn {
+  color: #619BBD;
+}
+
+.special {
+  color: #619BBD;
+}
+
