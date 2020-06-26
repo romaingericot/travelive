@@ -29,7 +29,7 @@
         <p class="infos"><%= @tour.duration %>min</p>
       </li>
       <li>
-        <p class="tab">Langage</p>
+        <p class="tab">Langue</p>
         <p class="infos"><%= @tour.language %></p>
       </li>
       <li>
@@ -39,6 +39,7 @@
     </ul>
     <div class="body-container">
       <div class="presentation">
+        <h5>Présentation</h5>
         <h3>Description détaillée de votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
         <p><%= @tour.description %></p>
         <div class="price">
@@ -69,8 +70,13 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
-
+  <div class="bouton">
+    <%= link_to "Book now", "#", class: "btn btn-flat" %>
+  </div>
+  <div id="triangle0"></div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[1].key %>);">
+  <div id="triangle2"></div>
+  </div>
 </div>
