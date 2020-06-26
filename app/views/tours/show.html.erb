@@ -86,16 +86,24 @@
       <p>Consulter les prochains lives de <%= @tour.user.first_name %>.</p>
     </div>
   </div>
-  <div class="container-calendrier">
-    <ul class="card-list">
-      <% Tour.where(user_id: @tour.user_id).each do |tour|%>
-        <li class="card">
-          <%= cl_image_tag tour.images[0].key %>
-          <p><%= tour.date.strftime("%d %B") %></p>
-          <p><%= tour.time.strftime("%I:%M %p") %></p>
-          <p><%= tour.duration %></p>
-        </li>
-      <% end %>
-    </ul>
+
+    <div class="container-calendrier">
+      <ul class="card-list">
+        <% Tour.where(user_id: @tour.user_id).each do |tour|%>
+        <%= link_to tour_path(tour) do %>
+          <li class="card">
+            <%= cl_image_tag tour.images[0].key %>
+            <div id="triangle3"></div>
+            <div class="card-info">
+              <h5><%= tour.name %></h5>
+              <p>Date <%= tour.date.strftime("%d %B") %></p>
+              <p>Heure <%= tour.time.strftime("%I:%M %p") %></p>
+              <p>Durée de la visite <%= tour.duration %>min</p>
+            </div>
+          </li>
+        <% end %>
+        <% end %>
+      </ul>
+
   </div>
 </div>
