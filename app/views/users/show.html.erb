@@ -5,7 +5,7 @@
       <h2>Tours proposés</h2>
 
       <% @tours.each do |tour| %>
-        <div class="card">
+        <div class="card-list">
           <%= cl_image_tag tour.images[0].key %>
           <div class="card-click">
             <h5><%= tour.name %></h5>
@@ -31,20 +31,19 @@
 
   <% unless @bookings.empty? %>
     <h2>Tours reservés</h2>
-
-    <% @bookings.each do |booking| %>
-      <!-- <div class="card"> -->
-        <div class="card-click">
-          <%= cl_image_tag booking.tour.images[0].key %>
+    <ul class="card-list">
+      <% @bookings.each do |booking| %>
+      <li class="card">
+        <%= cl_image_tag booking.tour.images[0].key %>
           <h5><%= booking.tour.name %></h5>
-          <div class="card-info">
+
             <p><%= booking.tour.date %></p>
             <p>Durée - <%= booking.tour.duration %> minutes</p>
             <p>Langue - <%= booking.tour.language.capitalize %></p>
-          </div>
-        </div>
-      <!-- </div> -->
-    <% end %>
+            <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
+            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
+        <% end %>
+      </ul>
   <% end %>
 
 </div>

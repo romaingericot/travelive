@@ -1,8 +1,9 @@
 .body-container {
   display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin-top: 55px;
+  justify-content: space-between;
+  width: 878px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .body-container .presentation {
@@ -17,7 +18,8 @@
 .slider {
   width: 400px;
   length: 300px;
-  height: 300px;
+  height: 280px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .guidename {
@@ -31,4 +33,43 @@
 
 strong {
   color: #619BBD;
+  font-weight: lighter;
+}
+
+.presentation h5 {
+  color: #A9C8DB;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.calendrier {
+  text-align: center;
+}
+
+.calendrier h5 {
+  color: #A9C8DB;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.calendrier p {
+  color: #5290B7;
+}
+
+.live-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: center;
+  margin-bottom: 50px;
+}
+
+
+.container-calendrier {
+  width: 1100px;
+  padding: 43px;
+  margin: 80px;
 }
