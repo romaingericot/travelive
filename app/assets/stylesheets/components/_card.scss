@@ -3,7 +3,7 @@
   height: 460px;
   text-align: center;
   padding: 0px;
-  margin: 0px;
+  margin-bottom: 15px;
   font-family: 'Open Sans', sans-serif;
   background: white;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
 }
 
 .card-list {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   position: center;
