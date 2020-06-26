@@ -76,7 +76,7 @@
     <%= link_to "Book now", "#", class: "btn btn-flat" %>
   </div>
   <div id="triangle0"></div>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[1].key %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
   </div>
 </div>
