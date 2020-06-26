@@ -73,7 +73,7 @@
     </div>
   </div>
   <div class="bouton">
-    <%= link_to "Réserver la visite", user_path(current_user), class: "btn btn-flat" %>
+    <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
   </div>
   <div id="triangle0"></div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images.last.key %>);">
