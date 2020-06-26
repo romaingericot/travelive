@@ -1,5 +1,4 @@
 class Tour < ApplicationRecord
-  skip_before_action :authenticate_user!, only: [:index, :show]
 
   belongs_to :user
   has_many :bookings
