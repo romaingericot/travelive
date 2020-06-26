@@ -1,6 +1,6 @@
 .card {
   width: 324px;
-  height: auto;
+  height: 460px;
   text-align: center;
   padding: 0px;
   margin: 0px;
@@ -70,6 +70,16 @@
     width: auto;
     length: 155px;
     border-left: 322px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 40px solid white;
+  }
+
+  #triangle-popup {
+    position: relative;
+    top: -40px;
+    width: auto;
+    length: 155px;
+    border-left: 240px solid transparent;
     border-right: 0px solid transparent;
     border-bottom: 40px solid white;
   }

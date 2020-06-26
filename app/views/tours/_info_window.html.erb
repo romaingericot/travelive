@@ -1,7 +1,8 @@
 
 
  <%= link_to tour_path(tour) do %>
-  <%= cl_image_tag tour.images[0].key %>
+  <div class="card-photo"> <%= cl_image_tag tour.images[0].key %> </div>
+  <div id="triangle-popup"></div>
   <div class="card-click">
     <h5><%= tour.name %></h5>
     <div class="card-info">
@@ -12,7 +13,7 @@
     <hr>
     <div class="card-inline">
       <% if tour.user.photo.attached? %>
-            <%= cl_image_tag "#{tour.user.photo.key}", crop: :fill, class: "avatar" %>
+            <%= cl_image_tag "#{tour.user.photo.key}", crop: :fill, class: "avatar-img" %>
       <% else %>
              <%= image_tag tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill, class: "avatar" %>
       <% end %>
