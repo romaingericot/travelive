@@ -6,8 +6,8 @@ class ToursController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @cities = Tour.all.map { |tour| tour.city }.sort
-    @countries = Tour.all.map { |tour| tour.country }.sort
+    @cities = Tour.all.map { |tour| tour.city }.sort.uniq
+    @countries = Tour.all.map { |tour| tour.country }.sort.uniq
     if params[:search].nil?
       @tours = Tour.geocoded
       @markers = @tours.map do |tour|
