@@ -3,15 +3,16 @@
 <div class="">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images[0].key %>);">
 
-      <h2><%= @tour.name %></h2>
-      <p><%= @tour.city %></p>
-      <p><%= @tour.country %></p>
 
       <% if @tour.user.photo.attached? %>
             <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
       <% else %>
              <%= image_tag @tour.user.gender == "homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
       <% end %>
+      <h2><%= @tour.name %></h2>
+      <p><%= @tour.city %></p>
+      <p><%= @tour.country %></p>
+
   <div id="triangle"></div>
   </div>
   <div class="tab-container">
