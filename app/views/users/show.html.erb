@@ -42,6 +42,7 @@
             <p>Durée - <%= booking.tour.duration %> minutes</p>
             <p>Langue - <%= booking.tour.language.capitalize %></p>
             <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
+            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
           </div>
         </div>
       <!-- </div> -->
