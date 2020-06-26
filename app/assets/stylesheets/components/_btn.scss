@@ -1,0 +1,21 @@
+.btn-flat {
+  color: #CC3363;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border:1.5px solid #CC3363;
+  transition: background 0.3s ease;
+  position: center;
+
+}
+
+.btn-flat:hover {
+  background: #CC3363;
+  color: white;
+
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -50px;
+}

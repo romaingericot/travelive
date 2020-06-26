@@ -70,6 +70,8 @@ gizeh.images.attach(io: photo12_romain, filename: 'photo.png', content_type: 'im
 gizeh.save!
 
 
+
+
 photo1_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593081255/r1idgpc4asnj30fuy1j7zuqxs4c8.jpg")
 photo5_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163639/ben-vloon-MSkaRatXB3I-unsplash_et4oiu.jpg")
 photo6_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163694/julian-berengar-solter-twzfUdCDahs-unsplash_vrlmo4.jpg")
