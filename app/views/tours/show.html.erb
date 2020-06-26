@@ -10,7 +10,7 @@
       <% if @tour.user.photo.attached? %>
             <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
       <% else %>
-             <%= image_tag @tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
+             <%= image_tag @tour.user.gender == "homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
       <% end %>
   <div id="triangle"></div>
   </div>
@@ -40,7 +40,7 @@
     <div class="body-container">
       <div class="presentation">
         <h5>Présentation</h5>
-        <h3>Description détaillée de votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
+        <h3>Description détaillée par votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
         <p><%= @tour.description %></p>
         <div class="price">
           <p><%= @tour.price %>€</p>
@@ -73,10 +73,29 @@
     </div>
   </div>
   <div class="bouton">
-    <%= link_to "Book now", "#", class: "btn btn-flat" %>
+    <%= link_to "Réserver la visite", user_path(current_user), class: "btn btn-flat" %>
   </div>
   <div id="triangle0"></div>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[1].key %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
+  </div>
+  <div class="tab-container">
+    <div class="calendrier">
+      <h5>Calendrier</h5>
+      <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
+      <p>Consulter les prochains lives de <%= @tour.user.first_name %>.</p>
+    </div>
+  </div>
+  <div class="container-calendrier">
+    <ul class="card-list">
+      <% Tour.where(user_id: @tour.user_id).each do |tour|%>
+        <li class="card">
+          <%= cl_image_tag tour.images[0].key %>
+          <p><%= tour.date.strftime("%d %B") %></p>
+          <p><%= tour.time.strftime("%I:%M %p") %></p>
+          <p><%= tour.duration %></p>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
