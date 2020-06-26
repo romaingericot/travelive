@@ -61,9 +61,8 @@ strong {
 }
 
 .live-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
   position: center;
   margin-bottom: 50px;
 }
