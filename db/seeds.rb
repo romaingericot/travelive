@@ -44,7 +44,11 @@ afrique.images.attach(io: photo3_romain, filename: 'photo.png', content_type: 'i
 afrique.save!
 
 photo1_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593081255/r1idgpc4asnj30fuy1j7zuqxs4c8.jpg")
+photo5_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163639/ben-vloon-MSkaRatXB3I-unsplash_et4oiu.jpg")
+photo6_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163694/julian-berengar-solter-twzfUdCDahs-unsplash_vrlmo4.jpg")
 arcachon.images.attach(io: photo1_jerome, filename: 'photo.jpeg', content_type: 'image/jpeg')
+arcachon.images.attach(io: photo5_romain, filename: 'photo.png', content_type: 'image/png')
+arcachon.images.attach(io: photo6_romain, filename: 'photo.png', content_type: 'image/png')
 arcachon.save!
 photo2_jerome = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593090112/caleb-miller-0Bs3et8FYyg-unsplash_fxc9sk.jpg")
 vatican.images.attach(io: photo2_jerome, filename: 'photo.jpeg', content_type: 'image/jpeg')
@@ -70,22 +74,44 @@ húsavík.images.attach(io: photo4_edouard, filename: 'photo.jpeg', content_type
 húsavík.save!
 
 photo1_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593083310/thiago-japyassu-56p0SF7UqcI-unsplash_vataze.jpg")
-recife.images.attach(io: photo1_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+photo17_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164854/anderson-w-rangel-R5ZhGy-A8e4-unsplash_yhvavw.jpg")
+photo18_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164869/thiago-japyassu-pZetlN0dtoM-unsplash_rvihyy.jpg")
+recife.images.attach(io: photo1_fabiola, photo17_fabiola, photo18_fabiola filename: 'photo.jpeg', content_type: 'image/jpeg')
 recife.save!
 photo2_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593096197/andrea-leopardi-z0A_IsZYXfM-unsplash_yo7kzo.jpg")
+photo15_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164636/sasha-stories-VynkVKneWJA-unsplash_lp1pox.jpg")
+photo16_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164624/fermin-rodriguez-penelas-r3muakP0QuE-unsplash_p4l5pv.jpg")
 argentine.images.attach(io: photo2_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+argentine.images.attach(io: photo15_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+argentine.images.attach(io: photo16_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 argentine.save!
 photo3_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593096547/vaun0815-13d6w4dztcM-unsplash_ccy1yw.jpg")
+photo11_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164298/arvin-wiyono-einIuvtZen4-unsplash_rio6ws.jpg")
+photo12_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164353/michael-lee-YhGQiKeSBLQ-unsplash_xh7kmu.jpg")
 sydney.images.attach(io: photo3_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+sydney.images.attach(io: photo11_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+sydney.images.attach(io: photo12_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 sydney.save!
 photo4_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593098810/felipe-simo-NvSYy0EEVfc-unsplash_pmmwdj.jpg")
+photo13_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164476/michael-parulava-L4jrg4c7928-unsplash_zwy3xr.jpg")
+photo14_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164448/michael-parulava-5V36D5JYcZA-unsplash_ccxct2.jpg")
 moscou.images.attach(io: photo4_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+moscou.images.attach(io: photo13_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+moscou.images.attach(io: photo14_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 moscou.save!
 photo5_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593099024/violette-filippini-VO8FNHLy8SI-unsplash_ubxqzd.jpg")
+photo9_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164089/courtney-hall-6_JmApzvvMg-unsplash_jldh6o.jpg")
+photo10_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593164078/ashley-ross-AyUH7XHZUBQ-unsplash_rawenn.jpg")
 huairou.images.attach(io: photo5_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+huairou.images.attach(io: photo9_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+huairou.images.attach(io: photo10_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 huairou.save!
 photo6_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593099557/erwan-hesry-uJ-OO3aZsSQ-unsplash_ppoivf.jpg")
+photo7_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163858/siamak-YpIxNnG1vC4-unsplash_nhraqx.jpg")
+photo8_fabiola = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593163851/moises-alex-WqI-PbYugn4-unsplash_e7wibz.jpg")
 rolandrarros.images.attach(io: photo6_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+rolandrarros.images.attach(io: photo7_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+rolandrarros.images.attach(io: photo8_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
 rolandrarros.save!
 
 
