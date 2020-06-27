@@ -12,6 +12,7 @@
           <p>Durée - <%= tour.duration %> minutes</p>
           <p>Langue - <%= tour.language.capitalize %></p>
           <hr>
+          <%= link_to "Changer ce tour", edit_tour_path(tour) , method: :get, class: "btn btn-flat m-2" %>
           <%= link_to "Annuler ce tour", tour_path(tour) , method: :delete, class: "btn btn-flat m-2" %>
         <% end %>
     </ul>
