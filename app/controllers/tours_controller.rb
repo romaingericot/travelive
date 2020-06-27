@@ -70,7 +70,7 @@ class ToursController < ApplicationController
 
   def update
     @tour = Tour.find(params[:id])
-    if @tour = Tour.update(tour_params)
+    if @tour.update(tour_params)
       redirect_to user_path(current_user)
     else
       render :edit
