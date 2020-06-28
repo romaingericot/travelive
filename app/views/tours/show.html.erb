@@ -88,7 +88,7 @@
   </div>
 
     <div class="container-calendrier">
-      <ul class="card-list">
+      <ul class="card-wrap">
         <% Tour.where(user_id: @tour.user_id).each do |tour|%>
         <%= link_to tour_path(tour) do %>
           <li class="card" data-aos="zoom-in">
