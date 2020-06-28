@@ -51,6 +51,7 @@ class ToursController < ApplicationController
     request["content-type"] = 'application/json'
     request["authorization"] = "Bearer #{ENV['DAILY_API_KEY']}"
     request.body = "{\"properties\":{\"max_participants\":10,\"enable_chat\":true,\"lang\":\"fr\"},\"privacy\":\"public\"}"
+    # request.body = "{\"properties\":{\"max_participants\":15,\"enable_knocking\":true,\"enable_screenshare\":true,\"enable_chat\":true,\"start_video_off\":true,\"start_audio_off\":true}}"
 
     response = http.request(request)
     # puts response.read_body
