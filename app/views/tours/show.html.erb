@@ -87,25 +87,26 @@
     </div>
   </div>
 
-  <div class="container-calendrier">
-    <ul class="card-wrap">
-      <% Tour.where(user_id: @tour.user_id).each do |tour|%>
-      <%= link_to tour_path(tour) do %>
-        <li class="card">
-          <%= cl_image_tag tour.images[0].key %>
-          <div id="triangle3"></div>
-          <div class="card-info">
-            <h5><%= tour.name %></h5>
-            <p>Date <%= tour.date.strftime("%d %B") %></p>
-            <p>Heure <%= tour.time.strftime("%I:%M %p") %></p>
-            <p>Durée de la visite <%= tour.duration %>min</p>
-          </div>
-        </li>
-      <% end %>
-      <% end %>
-    </ul>
-
+    <div class="container-calendrier">
+      <ul class="card-list">
+        <% Tour.where(user_id: @tour.user_id).each do |tour|%>
+        <%= link_to tour_path(tour) do %>
+          <li class="card" data-aos="zoom-in">
+            <%= cl_image_tag tour.images[0].key %>
+            <div id="triangle3"></div>
+            <div class="card-info">
+              <h5><%= tour.name %></h5>
+              <p>Date <%= tour.date.strftime("%d %B") %></p>
+              <p>Heure <%= tour.time.strftime("%I:%M %p") %></p>
+              <p>Durée de la visite <%= tour.duration %>min</p>
+            </div>
+          </li>
+        <% end %>
+        <% end %>
+      </ul>
   </div>
 </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
