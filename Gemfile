@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+# gem 'countupjs-rails', '~> 1.3', '>= 1.3.2.3'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
