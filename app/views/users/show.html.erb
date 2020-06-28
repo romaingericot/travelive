@@ -1,49 +1,40 @@
-<div class="container">
+<div class="container mt-5">
   <h1>Bienvenue <%= @user.first_name%>, voici vous prochaines voyages !</h1>
 
-    <% unless @tours.empty? %>
-      <h2>Tours proposés</h2>
-
-      <% @tours.each do |tour| %>
-        <div class="card-list">
-          <%= cl_image_tag tour.images[0].key %>
-          <div class="card-click">
+  <% unless @tours.empty? %>
+    <h2>Tours proposés</h2>
+    <ul class="card-list">
+        <% @tours.each do |tour| %>
+          <li class="card">
+          <%= link_to tour_path(tour) do %>
+            <%= cl_image_tag tour.images[0].key %>
             <h5><%= tour.name %></h5>
-            <div class="card-info">
-              <p><%= tour.date %></p>
-              <p>Durée - <%= tour.duration %> minutes</p>
-              <p>Langue - <%= tour.language.capitalize %></p>
-            </div>
+            <p><%= tour.date %></p>
+            <p>Durée - <%= tour.duration %> minutes</p>
+            <p>Langue - <%= tour.language.capitalize %></p>
             <hr>
-            <div class="card-inline">
-              <% if tour.user.photo.attached? %>
-                    <%= cl_image_tag "#{tour.user.photo.key}", crop: :fill, class: "avatar" %>
-              <% else %>
-                     <%= image_tag tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill, class: "avatar" %>
-              <% end %>
-
-              <p>Prix - <%= tour.price %>/personne</p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+            <%= link_to "Changer ce tour", edit_tour_path(tour) , method: :get, class: "btn btn-flat m-2" %>
+            <%= link_to "Annuler ce tour", tour_path(tour) , method: :delete, class: "btn btn-flat m-2" %>
+          <% end %>
+        <% end %>
+    </ul>
+  <% end %>
 
   <% unless @bookings.empty? %>
     <h2>Tours reservés</h2>
     <ul class="card-list">
-      <% @bookings.each do |booking| %>
+    <% @bookings.each do |booking| %>
       <li class="card">
-        <%= cl_image_tag booking.tour.images[0].key %>
+        <%= link_to tour_path(booking.tour) do %>
+          <%= cl_image_tag booking.tour.images[0].key %>
           <h5><%= booking.tour.name %></h5>
-
-            <p><%= booking.tour.date %></p>
-            <p>Durée - <%= booking.tour.duration %> minutes</p>
-            <p>Langue - <%= booking.tour.language.capitalize %></p>
-            <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
-            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
+          <p><%= booking.tour.date %></p>
+          <p>Durée - <%= booking.tour.duration %> minutes</p>
+          <p>Langue - <%= booking.tour.language.capitalize %></p>
+          <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
+          <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
         <% end %>
-      </ul>
+      <% end %>
+    </ul>
   <% end %>
-
 </div>
