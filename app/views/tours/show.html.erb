@@ -1,7 +1,7 @@
 
 
 <div class="">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
+  <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
       <h2><%= @tour.name %></h2>
       <p><%= @tour.city %></p>
@@ -91,7 +91,7 @@
       <ul class="card-list">
         <% Tour.where(user_id: @tour.user_id).each do |tour|%>
         <%= link_to tour_path(tour) do %>
-          <li class="card">
+          <li class="card" data-aos="zoom-in">
             <%= cl_image_tag tour.images[0].key %>
             <div id="triangle3"></div>
             <div class="card-info">
@@ -104,6 +104,9 @@
         <% end %>
         <% end %>
       </ul>
-
   </div>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
