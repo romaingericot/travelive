@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.0",
     "countup.js": "^2.0.5",
     "daily-node": "^0.0.2",
+    "flickity": "^2.2.1",
     "jarallax": "^1.12.1",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.11.0",
