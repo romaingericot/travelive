@@ -23,6 +23,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import {
+    jarallax,
+    jarallaxVideo
+} from 'jarallax';
 
 // Internal imports
 // import { initSelect2 } from '../components/init_select2';
@@ -33,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   AOS.init();
+  jarallaxVideo();
 });

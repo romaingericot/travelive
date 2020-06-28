@@ -10,6 +10,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
     "daily-node": "^0.0.2",
+    "jarallax": "^1.12.1",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.11.0",
     "popper.js": "^1.16.1",
