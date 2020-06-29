@@ -1,7 +1,6 @@
 .card-testimonial {
   position: relative;
   width: 100%;
-  border-radius: 0.375rem 0.375rem 0.375rem 0.375rem;
 }
 
 // Card row
@@ -47,3 +46,27 @@
   background: no-repeat center center / cover;
 }
 
+.shape {
+  position: absolute;
+  pointer-events: none; }
+
+.shape > * {
+  display: block; }
+
+.shape-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.shape-right > * {
+  position: inherit;
+  top: inherit;
+  bottom: inherit;
+  right: inherit;
+  -webkit-transform-origin: center left;
+          transform-origin: center left; }
+
+.shape-fluid-y > * {
+  width: auto;
+  height: 100%; }

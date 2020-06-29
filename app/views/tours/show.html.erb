@@ -111,14 +111,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 text-center">
-
         <!-- Heading -->
-        <h2>Nos voyageurs en parlent</h2>
+        <h5>Témoignages</h5>
+        <h3>Nos voyageurs <strong>en parlent</strong></h3>
         <!-- Text -->
-        <p class="font-size-lg text-muted mb-7 mb-md-9">
-          Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.
-        </p>
-
+        <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
       </div>
     </div> <!-- / .row -->
     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -132,7 +129,7 @@
 
               <!-- Slider -->
               <div class="card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
-                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('photo-1.jpg') %>);" href="#!">
+                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('testimonial.jpg') %>);" href="#!">
 
                   <!-- Image (placeholder) -->
                   <%= link_to root_path, class: "img-fluid d-md-none invisible" do %>
@@ -140,19 +137,14 @@
                   <% end %>
 
                 </a>
-                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('photo-26.jpg') %>);">
+                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('testimonial.jpg') %>);">
 
                   <!-- Image (placeholder) -->
                   <%= link_to root_path, class: "img-fluid d-md-none invisible" do %>
-                    <%= image_tag "photo-26.jpg" %>
+                    <%= image_tag "photo-27.jpg" %>
                   <% end %>
 
                 </a>
-              </div>
-
-              <!-- Shape -->
-              <div class="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
-                @@include("assets/img/shapes/curves/curve-4.svg")
               </div>
 
             </div>
@@ -174,7 +166,7 @@
                           <div class="img-fluid svg-shim" style="color: #FF5A5F;">
                             <!-- @@include("../app/assets/images/Voyages.jpg") -->
                             <%= link_to root_path, class: "navbar-brand" do %>
-                            <%= image_tag "travelive_logo.png" %>
+                            <%= image_tag "avatar-1", class: "rounded-circle" %>
                             <% end %>
                           </div>
 
@@ -183,7 +175,7 @@
 
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum”
+                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
                       </p>
 
                       <!-- Footer -->
@@ -208,7 +200,7 @@
                           <!-- Logo -->
                           <div class="img-fluid svg-shim" style="color: #3F5D87;">
                             <%= link_to root_path, class: "navbar-brand" do %>
-                            <%= image_tag "travelive_logo.png" %>
+                            <%= image_tag "avatar-3", class: "rounded-circle" %>
                             <% end %>
                           </div>
 
@@ -217,7 +209,7 @@
 
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi, nam ratione reprehenderit facere modi asperiores. Explicabo, eos, odit?”
+                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
                       </p>
 
                       <!-- Footer -->
@@ -247,7 +239,4 @@
 <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
