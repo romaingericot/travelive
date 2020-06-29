@@ -1,7 +1,7 @@
-<div class="container pt-4 pt-md-11">
+  <div class="container pt-4 pt-md-11">
   <div class="form pt-8 pt-md-11">
       <h3>Créeer un nouveau tour</h3>
-      <%= form_for (@tour) do |f| %>
+      <%= form_for [:guide, @tour] do |f| %>
 
       <%= f.label :name, class: "mt-3" %>
       <%= f.text_field :name, class: "form-control" %>
