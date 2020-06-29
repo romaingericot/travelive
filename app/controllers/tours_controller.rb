@@ -67,6 +67,7 @@ class ToursController < ApplicationController
 
   def live
     @tour = Tour.find(params[:tour_id])
+    @checkpoints = []
   end
 
   private

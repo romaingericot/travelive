@@ -1,66 +1,13 @@
-<div class="min-vh-100">
-  <div class="banner min-vh-100 jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
-  <h2><%= @tour.name %></h2>
-  <p><%= @tour.city %></p>
-  <p><%= @tour.country %></p>
-
-  <% if @tour.user.photo.attached? %>
-    <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
-  <% else %>
-    <%= image_tag @tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
-  <% end %>
-
-</div>
   <div class="tab-container">
-    <ul class="list-inline tabs">
-      <li>
-        <p class="tab align-top">Date</p>
-        <p class="infos"><%= @tour.date.strftime("%d %B") %></p>
-      </li>
-      <li>
-        <p class="tab">Heure</p>
-        <p class="infos"><%= @tour.time.strftime("%I:%M %p") %></p>
-      </li>
-      <li>
-        <p class="tab">Durée</p>
-        <p class="infos"><%= @tour.duration %>min</p>
-      </li>
-      <li>
-        <p class="tab">Langue</p>
-        <p class="infos"><%= @tour.language %></p>
-      </li>
-    </ul>
+    <div id="map"
+      style="width: 50%; height: 750px;"
+      data-markers="<%= @checkpoints.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-</div>
 
-
-  </div>
-</div>
-
-<!-- Daily.co -->
 <!-- <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-<script>
-  callFrame = window.DailyIframe.createFrame();
-  callFrame.join({ url: '<%= @tour.live_url %>' })
-</script>
-
-
-<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-<button onclick="startCall()">
-  start call
-</button>
-<script>
-async function startCall() {
-  let callUrl = '<%= @tour.live_url %>',
-    callFrame = window.DailyIframe.createFrame({
-      url: callUrl
-    });
-    callFrame.join();
-  }
- </script> -->
-
-<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
 <script>
 callFrame = window.DailyIframe.createFrame({
   showLeaveButton: true,
@@ -73,3 +20,4 @@ callFrame = window.DailyIframe.createFrame({
 });
 callFrame.join({ url: '<%= @tour.live_url %>' })
 </script>
+ -->
