@@ -1,40 +1,75 @@
-    <!-- WELCOME
-    ================================================== -->
-    <section class="py-8 py-md-11 border-bottom min-vh-100">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
+<div class="min-vh-100">
+  <div class="banner min-vh-100 jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
-            <!-- Preheader -->
-            <h6 class="text-uppercase text-primary" data-aos="fade-up">
-              Egypte
-            </h6>
+  <h2><%= @tour.name %></h2>
+  <p><%= @tour.city %></p>
+  <p><%= @tour.country %></p>
 
-            <!-- Headin -->
-            <h1 class="display-1 font-weight-bold" data-aos="fade-up" data-aos-delay="50">
-              Le secret des pyramides d'Egypte
-            </h1>
+  <% if @tour.user.photo.attached? %>
+    <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
+  <% else %>
+    <%= image_tag @tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
+  <% end %>
 
-            <!-- Text -->
-            <p class="lead text-muted mb-6" data-aos="fade-up" data-aos-delay="100">
-              Guide: Karim
-            </p>
+</div>
+  <div class="tab-container">
+    <ul class="list-inline tabs">
+      <li>
+        <p class="tab align-top">Date</p>
+        <p class="infos"><%= @tour.date.strftime("%d %B") %></p>
+      </li>
+      <li>
+        <p class="tab">Heure</p>
+        <p class="infos"><%= @tour.time.strftime("%I:%M %p") %></p>
+      </li>
+      <li>
+        <p class="tab">Durée</p>
+        <p class="infos"><%= @tour.duration %>min</p>
+      </li>
+      <li>
+        <p class="tab">Langue</p>
+        <p class="infos"><%= @tour.language %></p>
+      </li>
+    </ul>
+  </div>
+</div>
 
-            <!-- Button -->
-            <p class="mb-7 mb-md-9" data-aos="fade-up" data-aos-delay="150">
-              <a class="btn btn-primary shadow lift" href="#!">
-                Start <i class="fe fe-arrow-right ml-3"></i>
-              </a>
-            </p>
 
-          </div>
-      </div> <!-- / .container -->
-    </section>
+  </div>
+</div>
 
-<!-- Tests Daily.co ci-dessous-->
-
-<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+<!-- Daily.co -->
+<!-- <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
 <script>
   callFrame = window.DailyIframe.createFrame();
   callFrame.join({ url: '<%= @tour.live_url %>' })
+</script>
+
+
+<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+<button onclick="startCall()">
+  start call
+</button>
+<script>
+async function startCall() {
+  let callUrl = '<%= @tour.live_url %>',
+    callFrame = window.DailyIframe.createFrame({
+      url: callUrl
+    });
+    callFrame.join();
+  }
+ </script> -->
+
+<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+<script>
+callFrame = window.DailyIframe.createFrame({
+  showLeaveButton: true,
+  showFullscreenButton: true,
+  // iframeStyle: {
+  //   position: 'fixed',
+  //   width: '50%',
+  //   height: '100vh'
+  // }
+});
+callFrame.join({ url: '<%= @tour.live_url %>' })
 </script>
