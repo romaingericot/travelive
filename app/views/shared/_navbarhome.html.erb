@@ -5,10 +5,10 @@
 
   <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
     <div class="map-search" >
-      <%= f.input :city, label: "Ville", placeholder: "Votre prochaine ville", collection: @cities, input_html: { class: 'special' } %>
-      <%= f.input :country, label: "Pays", placeholder: "Votre prochaine ville", collection: @countries, input_html: { class: 'special' } %>
+      <%= f.input :city, label: "Ville", placeholder: "Ville", collection: @cities, input_html: { class: 'special' } %>
+      <%= f.input :country, label: "Pays", placeholder: "Pays", collection: @countries, input_html: { class: 'special' } %>
 
-      <%= f.submit "Search", class: "btn" %>
+      <%= f.submit "Go", class: "btn" %>
     </div>
   <% end %>
 
