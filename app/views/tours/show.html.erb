@@ -1,10 +1,5 @@
 <div class="">
-<<<<<<< HEAD
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images[0].key %>);">
-=======
   <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
->>>>>>> 0b38981241faa292497aabb7ee13f9db5a203d10
-
 
       <% if @tour.user.photo.attached? %>
             <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
