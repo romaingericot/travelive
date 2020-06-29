@@ -3,7 +3,7 @@
 
   <% unless @tours.empty? %>
     <h2>Tours proposés</h2>
-    <ul class="card-list">
+    <ul class="card-wrap">
         <% @tours.each do |tour| %>
           <li class="card">
           <%= link_to tour_path(tour) do %>
@@ -22,7 +22,7 @@
 
   <% unless @bookings.empty? %>
     <h2>Tours reservés</h2>
-    <ul class="card-list">
+    <ul class="card-wrap">
     <% @bookings.each do |booking| %>
       <li class="card">
         <%= link_to tour_path(booking.tour) do %>
