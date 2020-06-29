@@ -6,9 +6,17 @@
   <div class="card-click">
     <h5><%= tour.name %></h5>
     <div class="card-info">
-      <p><%= tour.date %></p>
-      <p>Durée - <%= tour.duration %> minutes</p>
-      <p>Langue - <%= tour.language.capitalize %></p>
+      <p><%= tour.date.strftime('%x') %></p>
+      <p>
+        <i class="fas fa-map-marked-alt"></i>
+        <%= tour.country%></p>
+
+      <p>
+        <i class="far fa-clock text-center"></i>
+        <%= tour.duration %> minutes</p>
+      <p>
+        <i class="fa fa-language" aria-hidden="true"></i>
+        <%= tour.language.capitalize %></p>
     </div>
     <hr>
     <div class="card-inline">
@@ -18,7 +26,7 @@
              <%= image_tag tour.user.gender == "Homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill, class: "avatar" %>
       <% end %>
 
-      <p>Prix - <%= tour.price %>/personne</p>
+      <p><%= tour.price %> € /personne</p>
     </div>
   </div>
 <% end %>
