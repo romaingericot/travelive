@@ -46,6 +46,7 @@ strong {
 
 .calendrier {
   text-align: center;
+  margin-bottom: 45px;
 }
 
 .calendrier h5 {
@@ -60,16 +61,15 @@ strong {
   color: #5290B7;
 }
 
-.live-list {
-  display: flex;
-  flex-wrap: wrap;
-  position: center;
-  margin-bottom: 50px;
+.container-calendrier {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-
-.container-calendrier {
-  width: 1100px;
-  padding: 43px;
-  margin: 80px;
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px;
 }
