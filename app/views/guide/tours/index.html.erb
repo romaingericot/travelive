@@ -15,15 +15,12 @@
             <p><%= tour.date %></p>
             <p>Durée - <%= tour.duration %> minutes</p>
             <p>Langue - <%= tour.language.capitalize %></p>
-<<<<<<< HEAD
             <hr>
-            <%= link_to "Démarrer le tour", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-2" %>
-=======
           </div>
           <div class="card-link">
->>>>>>> bebe5697870ae58d5fc20912e02f5cc01d3a945c
-            <%= link_to "Changer ce tour", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-2" %>
-            <%= link_to "Annuler ce tour", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-2" %>
+            <%= link_to "Démarrer", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-1" %>
+            <%= link_to "Changer", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-1" %>
+            <%= link_to "Annuler", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-1" %>
           </div>
         </div>
       </div>

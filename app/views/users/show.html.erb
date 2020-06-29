@@ -17,8 +17,9 @@
             <p>Langue - <%= booking.tour.language.capitalize %></p>
           </div>
           <div class="card-link">
-            <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
-            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
+            <%= link_to "Rejoindre par ordinateur", tour_live_path(booking.tour), class: "btn btn-flat m-1" %>
+            <%= link_to "Rejoindre par téléphone", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-1" %>
+            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-1" %>
           </div>
         </div>
       </div>
