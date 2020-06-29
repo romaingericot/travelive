@@ -3,6 +3,15 @@
     <%= image_tag "travelive_logov2.png" %>
   <% end %>
 
+  <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+    <div class="map-search" >
+      <%= f.input :city, label: "Ville", placeholder: "Ville", collection: @cities, input_html: { class: 'special' } %>
+      <%= f.input :country, label: "Pays", placeholder: "Pays", collection: @countries, input_html: { class: 'special' } %>
+
+      <%= f.submit "Go", class: "btn" %>
+    </div>
+  <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

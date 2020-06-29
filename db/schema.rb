@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_135548) do
+ActiveRecord::Schema.define(version: 2020_06_29_152337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 2020_06_25_135548) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tour_id"], name: "index_bookings_on_tour_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "checkpoints", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "tour_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tour_id"], name: "index_checkpoints_on_tour_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -95,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_135548) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "tours"
   add_foreign_key "bookings", "users"
+  add_foreign_key "checkpoints", "tours"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "tours", "users"
 end
