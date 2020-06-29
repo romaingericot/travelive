@@ -1,24 +1,5 @@
 <div class="container mt-5">
-  <h1>Bienvenue <%= @user.first_name%>, voici vous prochaines voyages !</h1>
-
-  <% unless @tours.empty? %>
-    <h2>Tours proposés</h2>
-    <ul class="card-wrap">
-        <% @tours.each do |tour| %>
-          <li class="card">
-          <%= link_to tour_path(tour) do %>
-            <%= cl_image_tag tour.images[0].key %>
-            <h5><%= tour.name %></h5>
-            <p><%= tour.date %></p>
-            <p>Durée - <%= tour.duration %> minutes</p>
-            <p>Langue - <%= tour.language.capitalize %></p>
-            <hr>
-            <%= link_to "Changer ce tour", edit_tour_path(tour) , method: :get, class: "btn btn-flat m-2" %>
-            <%= link_to "Annuler ce tour", tour_path(tour) , method: :delete, class: "btn btn-flat m-2" %>
-          <% end %>
-        <% end %>
-    </ul>
-  <% end %>
+  <h1>Bienvenue <%= current_user.first_name%>, voici vos prochains voyages !</h1>
 
   <% unless @bookings.empty? %>
     <h2>Tours reservés</h2>

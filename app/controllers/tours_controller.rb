@@ -65,25 +65,6 @@ class ToursController < ApplicationController
     end
   end
 
-  def edit
-    @tour = Tour.find(params[:id])
-  end
-
-  def update
-    @tour = Tour.find(params[:id])
-    if @tour.update(tour_params)
-      redirect_to user_path(current_user)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @tour = Tour.find(params[:id])
-    @tour.destroy
-    redirect_to user_path(current_user)
-  end
-
   def live
     @tour = Tour.find(params[:tour_id])
   end
