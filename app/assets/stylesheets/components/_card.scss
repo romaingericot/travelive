@@ -21,6 +21,14 @@
 
 .card-info {
   margin-bottom: 15px;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  color: grey;
+}
+
+.card-click {
+  margin-bottom: 15px;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  color: grey;
 }
 
 .card-list {
@@ -95,4 +103,58 @@
 .card p {
   margin: 0px;
   color: grey;
+}
+
+
+.card-product {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin: 20px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card-product-infos-link {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-product-infos-link  h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #619BBD;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.card-product-infos-link  p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  padding: 0px;
+  margin: 0px;
+}
+.card-product-infos {
+  color: #619BBD;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px;
+}
+
+.card-link {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 20px;
 }

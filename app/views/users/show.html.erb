@@ -1,21 +1,27 @@
 <div class="container mt-5">
-  <h1>Bienvenue <%= current_user.first_name%>, voici vos prochains voyages !</h1>
+  <div class="tab-container">
+    <h2>Bienvenue <%= current_user.first_name%>, voici vos prochains voyages !</h2>
+  </div>
 
   <% unless @bookings.empty? %>
-    <h2>Tours reservés</h2>
-    <ul class="card-wrap">
     <% @bookings.each do |booking| %>
-      <li class="card">
+      <div class="card-product">
         <%= link_to tour_path(booking.tour) do %>
           <%= cl_image_tag booking.tour.images[0].key %>
-          <h5><%= booking.tour.name %></h5>
-          <p><%= booking.tour.date %></p>
-          <p>Durée - <%= booking.tour.duration %> minutes</p>
-          <p>Langue - <%= booking.tour.language.capitalize %></p>
-          <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
-          <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
         <% end %>
-      <% end %>
-    </ul>
+        <div class="card-product-infos-link">
+          <div class="card-product-infos">
+            <h2><%= booking.tour.name %></h2>
+            <p><%= booking.tour.date %></p>
+            <p>Durée - <%= booking.tour.duration %> minutes</p>
+            <p>Langue - <%= booking.tour.language.capitalize %></p>
+          </div>
+          <div class="card-link">
+            <%= link_to "Rejoindre", tour_live_path(booking.tour), class: "btn btn-flat m-2" %>
+            <%= link_to "Annuler la réservation", booking_path(booking) , method: :delete, class: "btn btn-flat m-2" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

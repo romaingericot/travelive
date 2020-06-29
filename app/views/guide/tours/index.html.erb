@@ -1,23 +1,32 @@
 <div class="container mt-5">
-  <h1>Bienvenue <%= current_user.first_name%>, voici vos prochains tours !</h1>
+  <div class="tab-container">
+    <h2>Bienvenue <%= current_user.first_name%>, voici vos prochains voyages !</h2>
+  </div>
 
   <% unless @tours.empty? %>
-    <h2>Tours proposés</h2>
-    <ul class="card-wrap">
-        <% @tours.each do |tour| %>
-          <li class="card">
-          <%= link_to tour_path(tour) do %>
-            <%= cl_image_tag tour.images[0].key %>
-            <h5><%= tour.name %></h5>
+    <% @tours.each do |tour| %>
+      <div class="card-product">
+        <%= link_to tour_path(tour) do %>
+          <%= cl_image_tag tour.images[0].key %>
+        <% end %>
+        <div class="card-product-infos-link">
+          <div class="card-product-infos">
+            <h2><%= tour.name %></h2>
             <p><%= tour.date %></p>
             <p>Durée - <%= tour.duration %> minutes</p>
             <p>Langue - <%= tour.language.capitalize %></p>
+<<<<<<< HEAD
             <hr>
             <%= link_to "Démarrer le tour", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-2" %>
+=======
+          </div>
+          <div class="card-link">
+>>>>>>> bebe5697870ae58d5fc20912e02f5cc01d3a945c
             <%= link_to "Changer ce tour", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-2" %>
             <%= link_to "Annuler ce tour", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-2" %>
-          <% end %>
-        <% end %>
-    </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
