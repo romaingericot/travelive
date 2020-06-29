@@ -1,0 +1,28 @@
+.shape {
+  position: absolute;
+  pointer-events: none; }
+
+.shape > * {
+  display: block; }
+
+.shape-left {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.shape-left > * {
+  position: inherit;
+  top: inherit;
+  bottom: inherit;
+  left: inherit;
+  -webkit-transform-origin: center right;
+          transform-origin: center right; }
+
+.shape-fluid-x > * {
+  width: 100%;
+  height: auto; }
+
+.shape-fluid-y > * {
+  width: auto;
+  height: 100%; }

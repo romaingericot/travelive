@@ -1,0 +1,49 @@
+.card-testimonial {
+  position: relative;
+  width: 100%;
+  border-radius: 0.375rem 0.375rem 0.375rem 0.375rem;
+}
+
+// Card row
+.card-row {
+  .card-body {
+    @include media-breakpoint-up(md) {
+      padding: 4rem 2.5rem;
+    }
+  }
+
+  .card-meta {
+    @include media-breakpoint-up(md) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+}
+
+// Card image slider
+.card-img-slider {
+  @include media-breakpoint-up(md) {
+    height: 100%;
+    width: 100%;
+    * {
+      height: inherit !important;
+      width: inherit !important;
+    }
+  }
+}
+
+.card-body, .card-footer, .card-meta, .card-img, .card-img-top, .card-img-left, .card-img-right {
+  position: relative;
+  min-height: 1px;
+}
+
+.card-img-left {
+  border-radius: 0.375rem 0.375rem 0 0; }
+  @media (min-width: 768px) {
+    .card-img-left {
+      border-radius: 0.375rem 0 0 0.375rem; } }
+
+.bg-cover {
+  background: no-repeat center center / cover;
+}
+
