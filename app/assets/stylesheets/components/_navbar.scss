@@ -27,7 +27,7 @@
   top: 0%;
 }
 
-label {
+.navbar-lewagon label {
   width: 100px;
   display: inline-block;
   color: #cc3363;
@@ -37,13 +37,13 @@ label {
   margin-right: -10px;
 }
 
-.form-group {
+.navbar-lewagon .form-group {
   display: flex;
   width: 350px;
   margin-bottom: 0rem;
 }
 
-.btn {
+.navbar-lewagon .btn {
   color: #CC3363;
   padding: 0px 7px;
   border-radius: 50px;
@@ -52,11 +52,11 @@ label {
   margin-left: 15px;
 }
 
-.btn:hover {
+.navbar-lewagon .btn:hover {
   background: #CC3363;
   color: white;
 }
 
-.special {
+.navbar-lewagon .special {
   color: #cc3363;
 }
