@@ -10,17 +10,18 @@
       <p><%= @tour.city %></p>
       <p><%= @tour.country %></p>
 
+
   <div id="triangle"></div>
   </div>
   <div class="tab-container">
     <ul class="list-inline tabs">
       <li>
         <p class="tab">Date</p>
-        <p class="infos"><%= @tour.date.strftime("%d %B") %></p>
+        <p class="infos"><%= @tour.date.strftime('%x') %></p>
       </li>
       <li>
         <p class="tab">Heure</p>
-        <p class="infos"><%= @tour.time.strftime("%I:%M %p") %></p>
+        <p class="infos"><%= @tour.time.strftime("%H:%M") %></p>
       </li>
       <li>
         <p class="tab">Durée</p>
