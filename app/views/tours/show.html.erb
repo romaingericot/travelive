@@ -1,15 +1,20 @@
 <div class="">
+<<<<<<< HEAD
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images[0].key %>);">
+=======
   <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
+>>>>>>> 0b38981241faa292497aabb7ee13f9db5a203d10
 
-      <h2><%= @tour.name %></h2>
-      <p><%= @tour.city %></p>
-      <p><%= @tour.country %></p>
 
       <% if @tour.user.photo.attached? %>
             <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
       <% else %>
              <%= image_tag @tour.user.gender == "homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
       <% end %>
+      <h2><%= @tour.name %></h2>
+      <p><%= @tour.city %></p>
+      <p><%= @tour.country %></p>
+
   <div id="triangle"></div>
   </div>
   <div class="tab-container">
@@ -74,7 +79,7 @@
     <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
   </div>
   <div id="triangle0"></div>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images.last.key %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
   </div>
   <div class="tab-container">
