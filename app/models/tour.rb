@@ -3,6 +3,7 @@ class Tour < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :reviews, through: :bookings
+  has_many :checkpoints
 
   geocoded_by :city
   after_validation :geocode
