@@ -1,4 +1,8 @@
 <div class="">
+
+   <!-- banner
+  ================================================== -->
+
   <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
       <% if @tour.user.photo.attached? %>
@@ -6,9 +10,9 @@
       <% else %>
              <%= image_tag @tour.user.gender == "homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
       <% end %>
+      <h4> <%= @tour.user.first_name %> </h4>
       <h2><%= @tour.name %></h2>
 
- <p>
       <% if @tour.country.upcase == "EGYPTE" %>
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="48" height="48"
@@ -83,6 +87,10 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 
   <div id="triangle"></div>
   </div>
+
+   <!-- descipriotn et caroussel
+  ================================================== -->
+
   <div class="tab-container">
     <ul class="list-inline tabs">
       <li>
@@ -110,7 +118,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
       <div class="presentation">
         <h5>Présentation</h5>
         <h3>Description détaillée par votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
-        <p><%= @tour.description %></p>
+        <p><%= @tour.description %> </p>
         <div class="price">
           <p><strong><%= @tour.price %> €</strong></p>
           <p id="category"><strong><%= @tour.category %></strong></p>
@@ -141,6 +149,12 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
       </div>
     </div>
   </div>
+
+  <!-- profil guide
+  ================================================== -->
+  <div class="tab-container">
+    <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
+  </div>
   <div class="bouton">
     <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
   </div>
@@ -150,9 +164,8 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
   </div>
   <div class="tab-container">
     <div class="calendrier">
-
       <h5>Calendrier</h5>
-      <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
+      <h3>L'aventure continue <strong>toujours</strong>.</h3>
       <p>Consulter les prochains lives de <%= @tour.user.first_name %>.</p>
     </div>
   </div>
@@ -184,7 +197,9 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 text-center">
         <!-- Heading -->
-        <h5>Témoignages</h5>
+        <div class="testimonial">
+          <h5>Témoignages</h5>
+        </div>
         <h3>Nos voyageurs <strong>en parlent</strong></h3>
         <!-- Text -->
         <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
