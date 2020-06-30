@@ -1,21 +1,53 @@
+<!-- <div class="container-countdown min-vh-100 d-flex align-items-center d-flex justify-content-center">
+  <div class="row">
+    <div id="tour-date" data-datetime='<%#= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
+
+    <div class="container-countdown">
+      <ul>
+        <h1>Votre prochaine aventure débute bientôt</h1>
+        <li><span id="days"></span>Jours</li>
+        <li><span id="hours"></span>Heures</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Secondes</li>
+      </ul>
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+      <div class="bouton">
+<%#= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
+</div>
+  </div>
+
+
+</div> -->
+
+<!-- <div class="container-live-map">
+  <div class="live">
+  <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+  <script>
+  callFrame = window.DailyIframe.createFrame({
+    showLeaveButton: true,
+    showFullscreenButton: true,
+    iframeStyle: {
+      position: 'fixed',
+      top: '70px',
+      bottom: '80px',
+      width: '50%',
+      height: '100vh'
+    }
+  });
+  callFrame.join({ url: '<%= @tour.live_url %>' })
+  </script>
+</div> -->
 
 <div id="map-live"
   style="width: 50%; height: 450px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+</div>
 
-<!-- <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-<script>
-callFrame = window.DailyIframe.createFrame({
-  showLeaveButton: true,
-  showFullscreenButton: true,
-  // iframeStyle: {
-  //   position: 'fixed',
-  //   width: '50%',
-  //   height: '100vh'
-  // }
-});
-callFrame.join({ url: '<%= @tour.live_url %>' })
-</script>
- -->
