@@ -23,6 +23,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    I18n.locale = :fr
     @tour = Tour.find(params[:id])
   end
 
