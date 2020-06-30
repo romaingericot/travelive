@@ -35,6 +35,7 @@ import 'aos/dist/aos.css';
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxLive } from '../plugins/init_map_live';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { liveTimer } from '../plugins/init_count_up'
 import { initCountDown } from '../components/countdown'
@@ -52,4 +53,5 @@ document.addEventListener('turbolinks:load', () => {
   initCountDown();
   // countUp.start();
   // Flickity();
+  initMapboxLive();
 });

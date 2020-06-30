@@ -10,14 +10,7 @@ class ToursController < ApplicationController
     @countries = Tour.all.map { |tour| tour.country }.sort.uniq
     if params[:search].nil?
       @tours = Tour.geocoded
-      @markers = @tours.map do |tour|
-        {
-          lat: tour.latitude,
-          lng: tour.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { tour: tour })
-
-        }
-      end
+      set_markers(@tours)
     else
       if params[:search][:city].empty?
         @tours = Tour.where("country ILIKE ?", params[:search][:country]).geocoded
@@ -69,6 +62,14 @@ class ToursController < ApplicationController
 
   def live
     @tour = Tour.find(params[:tour_id])
+    @checkpoints = Checkpoint.geocoded
+    @markers = @checkpoints.map do |checkpoint|
+      {
+        lat: checkpoint.latitude,
+        lng: checkpoint.longitude,
+        infoWindow: render_to_string(partial: "info_window_live", locals: { checkpoint: checkpoint })
+      }
+    end
   end
 
   private
