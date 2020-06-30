@@ -6,6 +6,7 @@
   <div class="card-click">
     <h5><%= tour.name %></h5>
     <div class="card-info">
+      <p><%= l(tour.date, format: :long) %></p>
       <p>
         <i class="far fa-calendar-alt"></i>
         <%= l(tour.date, format: :short) %></p>
