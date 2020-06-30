@@ -33,6 +33,7 @@ import 'aos/dist/aos.css';
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxLive } from '../plugins/init_map_live';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 // import { CountUp } from '../plugins/countUp.js';
 // import { initSelect2 } from '../components/init_select2';
@@ -45,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
   jarallaxVideo();
   // Flickity();
+  initMapboxLive();
 });
