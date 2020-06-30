@@ -14,12 +14,43 @@
 
 .connecter {
   margin-top: 55px;
-
 }
+
+.connecter p {
+  text-align: center;
+}
+
 .connecter h2 {
 color: #366581;
 }
 
-.connectionform-inputs {
-
+.connecter h3 {
+color: #366581;
+font-size: 33px;
+text-align: center;
 }
+
+label {
+  color: #cc3363;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-actions .btn {
+  color: #CC3363;
+  padding: 0px 7px;
+  border-radius: 50px;
+  border: 1.5px solid #CC3363;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.form-actions .btn:hover {
+  background: #CC3363;
+  color: white;
+}
+
+.special {
+  color: #cc3363;
+}
+
