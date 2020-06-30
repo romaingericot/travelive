@@ -37,7 +37,7 @@ import 'aos/dist/aos.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { liveTimer } from '../plugins/init_count_up'
-import { initCountDown } from '../components/countdownclock'
+import { initCountDown } from '../components/countdown'
 // import { CountUp } from '../plugins/countUp.js';
 // import { initSelect2 } from '../components/init_select2';
 // import { Flickity } from '../plugins/init_flickity-fade';

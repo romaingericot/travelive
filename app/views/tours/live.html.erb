@@ -1,36 +1,29 @@
-    <div class="container-countdown min-vh-100 d-flex align-items-center d-flex justify-content-center">
-      <div class="row">
+<div class="container-countdown min-vh-100 d-flex align-items-center d-flex justify-content-center">
+  <div class="row">
+    <div id="tour-date" data-datetime='<%= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
 
-<!--         <div class="row">
+    <div class="container-countdown">
+      <ul>
         <h1>Votre prochaine aventure débute bientôt</h1>
-      </div> -->
-      <div id="tour-date" data-datetime='<%= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
-<!--       <div id="tour-hour" data-hour="<%#= @tour.time %>"></div> -->
-
-      <div class="container-countdown">
-          <ul>
-            <h1>Votre prochaine aventure débute bientôt</h1>
-            <li><span id="days"></span>Jours</li>
-            <li><span id="hours"></span>Heures</li>
-            <li><span id="minutes"></span>Minutes</li>
-            <li><span id="seconds"></span>Secondes</li>
-          </ul>
-          <%= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
-      </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-          <div class="bouton">
-    <%= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
+        <li><span id="days"></span>Jours</li>
+        <li><span id="hours"></span>Heures</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Secondes</li>
+      </ul>
+      <%= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
   </div>
-        <!-- <button type="button" class="btn btn-flat">Détails du voyage</button>
-            <button type="button" class="btn btn-flat">Contacter le Guide</button> -->
-      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+      <div class="bouton">
+<%= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
+</div>
+  </div>
 
 
-    </div>
+</div>
 
 <!-- Daily.co écran splité : -->
 <!-- <div class="live">
@@ -52,21 +45,8 @@
 </div> -->
 
 
-
-<!-- New clock : -->
-<!-- <div class="container">
-  <h1>Countdown to your next trip</h1>
-  <ul>
-    <li><span id="days"></span>days</li>
-    <li><span id="hours"></span>Hours</li>
-    <li><span id="minutes"></span>Minutes</li>
-    <li><span id="seconds"></span>Seconds</li>
-  </ul>
-</div> -->
-
-
 <!-- Daily.co -->
-<!-- <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
 <script>
   callFrame = window.DailyIframe.createFrame();
   callFrame.join({ url: '<%= @tour.live_url %>' })
@@ -85,4 +65,4 @@ async function startCall() {
     });
     callFrame.join();
   }
- </script> -->
+ </script>
