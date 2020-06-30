@@ -15,6 +15,7 @@ class ToursController < ApplicationController
           lat: tour.latitude,
           lng: tour.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { tour: tour })
+
         }
       end
     else
@@ -29,6 +30,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    I18n.locale = :fr
     @tour = Tour.find(params[:id])
   end
 
