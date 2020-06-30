@@ -5,6 +5,17 @@
   margin-top: 60px;
 }
 
+.tab-container2 {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.tab-container h2 {
+  color: #366581;
+  margin-top: 25px;
+}
+
 .tabs {
   position: absolute;
   top: 550px;
