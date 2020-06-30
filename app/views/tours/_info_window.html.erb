@@ -6,14 +6,16 @@
   <div class="card-click">
     <h5><%= tour.name %></h5>
     <div class="card-info">
-      <p><%= tour.date.strftime('%x') %></p>
+      <p>
+        <i class="far fa-calendar-alt"></i>
+        <%= l(tour.date, format: :short) %></p>
       <p>
         <i class="fas fa-map-marked-alt"></i>
         <%= tour.country%></p>
 
       <p>
         <i class="far fa-clock text-center"></i>
-        <%= tour.duration %> minutes</p>
+        <%= tour.duration %> min</p>
       <p>
         <i class="fa fa-language" aria-hidden="true"></i>
         <%= tour.language.capitalize %></p>
@@ -30,4 +32,3 @@
     </div>
   </div>
 <% end %>
-
