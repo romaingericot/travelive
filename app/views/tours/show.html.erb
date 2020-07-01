@@ -213,13 +213,33 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
             <li class="card" data-aos="fade-up">
               <%= cl_image_tag tour.images[0].key %>
               <div id="triangle3"></div>
-              <div class="card-info">
-                <h5><%= tour.name %></h5>
-                <p><%= tour.date.strftime('%x') %></p>
-                <p><%= tour.time.strftime("%H:%M") %></p>
-                <p><%= tour.duration %> min</p>
-              </div>
-            </li>
+    <div class="card-click"
+    style= "width: 248px;">
+
+    <h6><%= tour.name %></h6>
+
+    <div class="card-info" style="
+    padding-right: 20‒;
+    padding-left: 29px;
+    padding-right: _50;
+    padding-right: -50;
+    padding-right: -11;
+    width: 259px;
+    height: 88px;">
+      <p>
+        <i class="far fa-calendar-alt"></i>
+        <%= l(tour.date, format: :short) %></p>
+      <p>
+        <i class="fas fa-map-marked-alt"></i>
+        <%= tour.city%></p>
+
+      <p>
+        <i class="far fa-clock text-center"></i>
+        <%= tour.duration %> min</p>
+      <p>
+        <i class="fa fa-language" aria-hidden="true"></i>
+        <%= tour.language.capitalize %></p>
+    </div>
           <% end %>
         <% end %>
         <% end %>

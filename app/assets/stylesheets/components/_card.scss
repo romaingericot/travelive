@@ -32,6 +32,17 @@
   color: grey;
 }
 
+.card-click-show {
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+    color: grey;
+    height: 111px;
+    margin-right: 0px;
+    margin-left: 56px;
+    margin-bottom: 0px;
+    width: 216px;
+    margin-top: 43px;
+}
+
 .card-list {
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
@@ -99,6 +110,18 @@
     font-weight: bold;
     margin: 15px;
     margin-top: 0;
+  }
+
+
+  .card h6 {
+    color: #619BBD;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px;
+    margin-top: -50px;
+    height: 49px;
+    width: 264px;
+
   }
 
 .card p {
