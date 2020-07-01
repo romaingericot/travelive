@@ -34,10 +34,10 @@ const initCountDown = () => {
             showFullscreenButton: true,
             iframeStyle: {
               position: 'fixed',
-              top: '0px',
+              top: '88px',
               bottom: '80px',
               width: '50%',
-              height: '100vh'
+              height: '89vh'
             }
           });
           callFrame.join({ url: tourDate.dataset.liveurl })
