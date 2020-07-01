@@ -25,6 +25,7 @@ class ToursController < ApplicationController
   def show
     I18n.locale = :fr
     @tour = Tour.find(params[:id])
+    @guide_tours = Tour.where(user_id: @tour.user_id)
   end
 
   def new
