@@ -1,19 +1,11 @@
-<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-<script>
-callFrame = window.DailyIframe.createFrame({
-  showLeaveButton: true,
-  showFullscreenButton: true,
-  // iframeStyle: {
-  //   position: 'fixed',
-  //   width: '50%',
-  //   height: '100vh'
-  // }
-});
-callFrame.join({ url: '<%= @tour.live_url %>' })
-</script>
 
 
-<%= simple_form_for([ restaurant, review ], remote: true) do |f| %>
-  <%= f.input :checkpoints %>
-  <%= f.button :submit %>
-<% end %>
+<div class="card">
+  <% @checkpoints.each do |checkpoint| %>
+    <%= simple_form_for([:guide, checkpoint], remote: true) do |f| %>
+      <p><%= checkpoint.name %> </p>
+      <%= f.submit "Done" %>
+    <% end %>
+  <% end %>
+</div>
+

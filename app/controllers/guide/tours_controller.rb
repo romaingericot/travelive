@@ -24,7 +24,7 @@ class Guide::ToursController < ApplicationController
 
   def live
     @tour = Tour.find(params[:tour_id])
-    @checkpoints = Checkpoint.where(tour: @tour)
+    @checkpoints = Checkpoint.where(tour: @tour).where(progress: 0)
   end
 
   private

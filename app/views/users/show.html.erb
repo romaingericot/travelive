@@ -69,7 +69,7 @@
     <div class="container-calendrier">
       <ul class="card-wrap">
         <% Tour.first(3).each do |tour|%>
-        <%= link_to tour_path(tour) do %>
+          <%= link_to tour_path(tour) do %>
           <li class="card" data-aos="fade-up">
             <%= cl_image_tag tour.images[0].key %>
             <div id="triangle3"></div>
