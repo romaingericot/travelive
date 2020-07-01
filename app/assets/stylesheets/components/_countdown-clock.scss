@@ -1,0 +1,32 @@
+.container-countdown {
+  color: #333;
+  // background-color: #ffd54f;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.vh {
+min-height: 100vh;
+}
+
+.container-countdown h1 {
+  font-weight: normal;
+}
+
+.container-countdown li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.container-countdown li span {
+  display: block;
+  font-size: 4.5rem;
+}
