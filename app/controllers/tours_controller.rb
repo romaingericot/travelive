@@ -9,14 +9,14 @@ class ToursController < ApplicationController
     @cities = Tour.all.map { |tour| tour.city }.sort.uniq
     @countries = Tour.all.map { |tour| tour.country }.sort.uniq
     if params[:search].nil?
-      @tours = Tour.geocoded
+      @tours = Tour.where.not(user: current_user).geocoded
       set_markers(@tours)
     else
       if params[:search][:city].empty?
-        @tours = Tour.where("country ILIKE ?", params[:search][:country]).geocoded
+        @tours = Tour.where.not(user: current_user).where("country ILIKE ?", params[:search][:country]).geocoded
         set_markers(@tours)
       else
-        @tours = Tour.where("city ILIKE ?", params[:search][:city]).geocoded
+        @tours = Tour.where.not(user: current_user).where("city ILIKE ?", params[:search][:city]).geocoded
         set_markers(@tours)
       end
     end
@@ -46,8 +46,7 @@ class ToursController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request["content-type"] = 'application/json'
     request["authorization"] = "Bearer #{ENV['DAILY_API_KEY']}"
-    request.body = "{\"properties\":{\"max_participants\":10,\"enable_chat\":true,\"enable_knocking\":true,\"lang\":\"fr\"},\"privacy\":\"public\"}"
-    # request.body = "{\"properties\":{\"max_participants\":15,\"enable_knocking\":true,\"enable_screenshare\":true,\"enable_chat\":true,\"start_video_off\":true,\"start_audio_off\":true}}"
+    request.body = "{\"properties\":{\"max_participants\":20,\"enable_chat\":true,\"enable_screenshare\":true,\"enable_chat\":true,\"lang\":\"fr\"},\"privacy\":\"public\"}"
 
     response = http.request(request)
     # puts response.read_body
@@ -68,6 +67,7 @@ class ToursController < ApplicationController
       {
         lat: checkpoint.latitude,
         lng: checkpoint.longitude,
+        progress: checkpoint.progress,
         infoWindow: render_to_string(partial: "info_window_live", locals: { checkpoint: checkpoint })
       }
     end

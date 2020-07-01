@@ -171,13 +171,24 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 
   <!-- booking
   ================================================== -->
+  <% if current_user.bookings.map {|b| b.tour_id}.include?(@tour.id) %>
+    <div class="tab-container">
+      <h3>Tu as déjà réservé cette <strong>visite</strong>.</h3>
+    </div>
+    <div class="bouton">
+      <%= link_to "Dashboard", user_path(current_user), class: "btn btn-flat" %>
+    </div>
+  <% else %>
+    <div class="tab-container">
+      <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
+    </div>
+    <div class="bouton">
+      <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
+    </div>
+  <% end %>
 
-  <div class="tab-container">
-    <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
-  </div>
-  <div class="bouton">
-    <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
-  </div>
+  <!-- banner -->
+
   <div id="triangle0"></div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
