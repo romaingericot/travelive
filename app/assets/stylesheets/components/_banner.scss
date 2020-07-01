@@ -1,6 +1,6 @@
 .banner {
   background-size: cover;
-  height: 649px;
+  height: 618px;
   background-position: center;
   padding: 150px 0;
   display: flex;
@@ -8,12 +8,21 @@
 }
 
 .banner h2 {
-  margin: 0;
+  margin-bottom: -30px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 48px;
   font-weight: bold;
   text-align: center;
+}
+
+.banner h4 {
+  margin: 0;
+  color: #cc3363;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .banner p {
@@ -29,12 +38,13 @@
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -50px;
 
 }
 
 #triangle {
     position: relative;
-    top: 25px;
+    top: 87px;
     width: auto;
     length: 155px;
     border-left: 1420px solid transparent;
@@ -44,7 +54,7 @@
 
 #triangle2 {
     position: relative;
-    top: 369px;
+    top: 338px;
     width: auto;
     length: 155px;
     border-left: 1420px solid transparent;
