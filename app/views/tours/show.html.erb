@@ -196,18 +196,20 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 
     <div class="container-calendrier">
       <ul class="card-wrap">
-        <% Tour.where(user_id: @tour.user_id).each do |tour|%>
-        <%= link_to tour_path(tour) do %>
-          <li class="card" data-aos="fade-up">
-            <%= cl_image_tag tour.images[0].key %>
-            <div id="triangle3"></div>
-            <div class="card-info">
-              <h5><%= tour.name %></h5>
-              <p><%= tour.date.strftime('%x') %></p>
-              <p><%= tour.time.strftime("%H:%M") %></p>
-              <p><%= tour.duration %> min</p>
-            </div>
-          </li>
+        <% @guide_tours.each do |tour|%>
+          <% if tour.id != @tour.id %>
+            <%= link_to tour_path(tour) do %>
+            <li class="card" data-aos="fade-up">
+              <%= cl_image_tag tour.images[0].key %>
+              <div id="triangle3"></div>
+              <div class="card-info">
+                <h5><%= tour.name %></h5>
+                <p><%= tour.date.strftime('%x') %></p>
+                <p><%= tour.time.strftime("%H:%M") %></p>
+                <p><%= tour.duration %> min</p>
+              </div>
+            </li>
+          <% end %>
         <% end %>
         <% end %>
       </ul>
