@@ -3,9 +3,9 @@ require "open-uri"
 
 Review.destroy_all
 Booking.destroy_all
+Checkpoint.destroy_all
 Tour.destroy_all
 User.destroy_all
-
 
 puts "✅ Creating guides users"
 romain = User.create!(first_name: "Romain", last_name: "Géricot", password: "azerty", role: 0, description: "I lived all around the world, come to discorver it with me", email: "romain@gmail.com")
@@ -18,6 +18,9 @@ puts "✅ Creating user"
 jojo = User.create!(first_name: "Jonathan", last_name: "Serafini", password: "azerty", role: 1, description: "I want to travel again!!!", email: "jonathan@gmail.com")
 
 puts "✅ Creating tours"
+
+
+wagon = Tour.create!(name: "Le Tour des Chartrons", city: "Bordeaux", country: "France", capacity: 20, date: Date.new(2020, 7, 3), duration: 45, language: "Français", user: fabiola, price: 25, category: "Culture", time: Time.new(2020, 7, 3, 19, 0, 0), live_url: "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", description: "Partez à la découverte du quartier des Chartrons, anciennement connu pour ses négociations de vin, c'est aujourd'hui un quartier cosmopolite & branché. Laissez-vous guider dans le quartier pour une balade historique à la découverte des lieux emblématiques et insolites du quartier. Du célèbre Jardin Public jusqu'au M.U.R de Bordeaux pour finir avec un peu de street art, les Chartrons est un endroit rempli de charme à l'ambiance de petit village qui saura vous dépayser.")
 afrique = Tour.create!(name: "Le Parc National Kruger", city: "Kruger National Park", country: "Afrique du Sud", capacity: 10, date: Date.new(2020, 7, 10), duration: 120, language: "Français", user: romain, price: 25, category: "safari", time: Time.now, live_url: "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", description: "Cette réserve naturelle impressionne par sa taille comparable à celle d’un petit pays. Ainsi, le parc Kruger s’étend sur deux provinces sud-africaines : celle du Limpopo et celle du Mpumalanga. Votre passage par le Mpumalanga se concrétisera certainement par un safari au Kruger. Il serait plus que dommage de voyager au cœur du Mpumalanga sans expérimenter le safari en Afrique du Sud, les paysages de savane et la faune sauvage y sont uniques au monde !")
 arcachon = Tour.create!(name: "Le tour d'arcachon", city: "Arcachon", country: "France", capacity: 8, date: Date.new(2020, 8, 11), duration: 60, language: "Français", user: nicolas, price: 15, category: "mer", time: Time.now, live_url: "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", description: "Vivez l’expérience insolite du Bassin d’Arcachon sous une vision unique ! Entre découverte et détente, cette escapade nature vous fera apprécier la lenteur pour contempler l’environnement magique du Bassin d’Arcachon. A vélo, en voilier ou à pied, laissez vous guider le temps d’un weekend sur les côtes de cet incontournable Girondin. ")
 londres = Tour.create!(name: "Wimbledon", city: "Londres", country: "Angleterre", capacity: 8, date: Date.new(2020, 8, 2), duration: 90, language: "Français", user: edouard, price: 15, category: "sport", time: Time.now, live_url: "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", description: "La visite du Wimbledon Lawn Tennis Museum and Tour qui nous entraîne dans les coulisses du stade, sur le Court Central, le court n°1, dans la salle de conférences  et au musée du tennis est un passage incontournable pour tous sportifs  fans de tennis.")
@@ -198,9 +201,20 @@ rolandrarros.images.attach(io: photo8_fabiola, filename: 'photo.jpeg', content_t
 rolandrarros.save!
 
 
-puts "✅ Creating a booking"
-b = Booking.new
-b.tour = afrique
-b.user = jojo
-b.progress = 0
-b.save!
+puts "✅ Adding photos to tours"
+
+photo1_fabiola = URI.open("http://marketing-digital.audencia.com/wp-content/uploads/2017/03/Le-wagon.jpg")
+photo2_fabiola = URI.open("https://medias.otbor.vm.aiprod.com/780x490/PCUAQU033FS000Q1/1-Musee-du-Vin-et-du-Negoce--C.Pamelard---2-.jpg")
+photo3_fabiola = URI.open("https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Louis-des-Chartrons_(Bordeaux)#/media/Fichier:Bordeaux_Saint-Louis.jpg")
+photo4_fabiola = URI.open("https://images.sudouest.fr/2019/02/14/5c64d4c166a4bd8e0f5ac1fd/widescreen/1000x500/theoriquement-la-nouvelle.jpg")
+wagon.images.attach(io: photo1_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+wagon.images.attach(io: photo2_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+wagon.images.attach(io: photo3_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+wagon.images.attach(io: photo4_fabiola, filename: 'photo.jpeg', content_type: 'image/jpeg')
+wagon.save!
+
+c1 = Checkpoint.create!(name: "Le Wagon", progress: 0, tour: wagon, address: "107 Cours Balguerie Stuttenberg, 33300 Bordeaux", description: "The best bootcamp ever!")
+c2 = Checkpoint.create!(name: "Galerie ouverte", progress: 0, tour: wagon, address:"7, Rue André Darbon, Bordeaux", description: "Cette galerie, dans le prolongement du faubourg des arts, est un espace couvert, un repère, tant depuis les quais des Chartrons que depuis le cœur de la ZAC. Il s’agit d’une place urbaine, un espace de rencontres, d’événements liés aux thèmes de l’art, de l’artisanat, du théâtre et du vin.")
+c3 = Checkpoint.create!(name: "Musée du vin et du négoce de Bordeaux", progress: 0, tour: wagon, address: "41 Rue Borie, 33000 Bordeaux", description: "Dans l’immeuble du courtier royal de Louis XV, découvrez trois siècles d’histoire et de renommée des grands vins de Bordeaux. Les caves voutées, baties en 1720, retracent le travail des tonneliers et l’élevage du vin en barriques dans la tradition des négociants éleveurs du XIXème siècle.")
+c4 = Checkpoint.create!(name: "Eglise Saint-Louis des Chartrons", progress: 0, tour: wagon, address: "51 Rue Notre Dame, 33000 Bordeaux", description: "L'église Saint-Louis-des-Chartronsest dédiée à saint Louis et dépend de l'archidiocèse de Bordeaux. Cette église néo-gothique présente une façade très verticale en trois parties, ornée d'une rosace, avec deux tours à hautes flèches, de 58 mètres2, et un vaisseau massif. Son plan est en croix latine. Elle mesure 60,35 mètres de longueur pour 23 mètres de largeur et 22,26 mètres de hauteur de voûtes2. Le pignon est orné d'une statue de saint Louis de Louis Coëffard de Mazerolles (1818-1887). Ses tours en font l'église la plus haute de Bordeaux.")
+c5 = Checkpoint.create!(name: "CAPC Musée d'art contemporain", progress: 0, tour: wagon, address: "7 Rue Ferrere, 33000 Bordeaux", description: "Le CAPC musée d'art contemporain de Bordeaux, anciennement Centre d'arts plastiques contemporains (CAPC) de Bordeaux, est le musée d'art contemporain de Bordeaux inauguré en 1983 dans l'ancien Entrepôt Lainé.")
