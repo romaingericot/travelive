@@ -1,0 +1,16 @@
+<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+<script>
+callFrame = window.DailyIframe.createFrame({
+  showLeaveButton: true,
+  showFullscreenButton: true,
+  // iframeStyle: {
+  //   position: 'fixed',
+  //   width: '50%',
+  //   height: '100vh'
+  // }
+});
+callFrame.join({ url: '<%= @tour.live_url %>' })
+</script>
+
+
+

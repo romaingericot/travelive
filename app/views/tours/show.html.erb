@@ -3,7 +3,7 @@
    <!-- banner
   ================================================== -->
 
-  <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
+ <div class="banner jarallax" data-jarallax data-speed=".8" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @tour.images[0].key %>);">
 
       <% if @tour.user.photo.attached? %>
             <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
@@ -114,9 +114,9 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
-    <div class="body-container" data-aos="fade-up" data-aos-delay="100">
+    <div class="body-container" data-aos="fade-up">
       <div class="presentation">
-        <h5>Présentation</h5>
+        <h5>Présentation de la visite</h5>
         <h3>Description détaillée par votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
         <p><%= @tour.description %> </p>
         <div class="price">
@@ -152,6 +152,23 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 
   <!-- profil guide
   ================================================== -->
+  <div class="tab-container2">
+    <div class="body-container">
+      <div class="slider">
+        <% if @tour.user.photo.attached? %>
+            <%= cl_image_tag "#{@tour.user.photo.key}", crop: :fill %>
+        <% else %>
+             <%= image_tag @tour.user.gender == "homme" ? "avatar_homme.jpg" : "avatar_femme.jpg", crop: :fill %>
+        <% end %>
+      </div>
+      <div class="presentation">
+        <h5>Votre guide</h5>
+        <h3>Qui est votre guide <strong> <%= @tour.user.first_name %> </strong> ?</h3>
+        <p><%= @tour.user.description %> </p>
+      </div>
+    </div>
+  </div>
+
   <div class="tab-container">
     <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
   </div>
@@ -205,7 +222,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
       </div>
     </div> <!-- / .row -->
-    <div class="row" data-aos="fade-up" data-aos-delay="100">
+    <div class="row" data-aos="fade-up">
       <div class="col-12">
         <!-- Card -->
         <div class="card-testimonial card-row shadow mb-5">
