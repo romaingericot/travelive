@@ -146,7 +146,7 @@ nyc.images.attach(io: photo6_edouard, filename: 'photo.jpeg', content_type: 'ima
 nyc.save!
 
 photo4_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593095815/richard-sagredo-ZC2PWF4jTHc-unsplash_gb5nfm.jpg")
-photo7_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593174827/samples/max-gotts-AFg4iczGE9g-unsplash_zvq5gf.jpg")
+photo7_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593528084/m93id755fy8soif0mfd1kgm23mlp.jpg")
 photo8_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593174689/todd-cravens-lwACYK8ScmA-unsplash_lc1kji.jpg")
 húsavík.images.attach(io: photo4_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
 húsavík.images.attach(io: photo7_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
