@@ -22,6 +22,11 @@ class Guide::ToursController < ApplicationController
     redirect_to guide_tours_path(current_user)
   end
 
+  def live
+    @tour = Tour.find(params[:tour_id])
+    @checkpoints = Checkpoint.where(tour: @tour)
+  end
+
   private
 
   def tour_params
