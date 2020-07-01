@@ -13,4 +13,7 @@ callFrame.join({ url: '<%= @tour.live_url %>' })
 </script>
 
 
-
+<%= simple_form_for([ restaurant, review ], remote: true) do |f| %>
+  <%= f.input :checkpoints %>
+  <%= f.button :submit %>
+<% end %>
