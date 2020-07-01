@@ -67,6 +67,7 @@ class ToursController < ApplicationController
       {
         lat: checkpoint.latitude,
         lng: checkpoint.longitude,
+        progress: checkpoint.progress,
         infoWindow: render_to_string(partial: "info_window_live", locals: { checkpoint: checkpoint })
       }
     end
