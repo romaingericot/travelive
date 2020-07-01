@@ -1,12 +1,16 @@
-<!-- <div class="min-vh-100">
+
+<div id="counter-video" class="min-vh-100">
   <div class="container-countdown d-flex align-items-center d-flex justify-content-center">
     <div class="row">
-      <div id="tour-date" data-datetime='<%#= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
+      <div id="tour-date"
+        data-datetime='<%= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'
+        data-liveurl='<%= @tour.live_url %>'
+      ></div>
       <div class="container-countdown">
         <ul>
-          <%#= link_to root_path do %>
-            <%#= image_tag "undraw_traveling.svg", class: "img-countdown img-fluid pt-5 pb-5" %>
-          <% #end %>
+          <%= link_to root_path do %>
+            <%= image_tag "undraw_traveling.svg", class: "img-countdown img-fluid pt-5 pb-5" %>
+          <% end %>
           <h1 class="pt-3">Votre prochaine aventure débute bientôt</h1>
           <li><span id="days"></span>Jour(s)</li>
           <li><span id="hours"></span>Heure(s)</li>
@@ -17,35 +21,23 @@
     </div>
   </div>
 
-  <div class="container d-flex align-items-center d-flex justify-content-center pt-3">
+  <div class="container-countdown d-flex align-items-center d-flex justify-content-center pt-3">
     <%= link_to "Voir le détail", tour_path(@tour), class: "btn btn-flat" %>
   </div>
 </div>
  -->
 
-<div class="container">
+
+
+<div id="container-map-video" class="container d-none">
+
   <div class="row">
-    <div class="col nopadding">
+      <div class="col-6">
 
-        <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-        <script>
-        callFrame = window.DailyIframe.createFrame({
-          showLeaveButton: true,
-          showFullscreenButton: true,
-          iframeStyle: {
-            position: 'fixed',
-            top: '0px',
-            bottom: '80px',
-            width: '50%',
-            height: '100vh'
-          }
-        });
-        callFrame.join({ url: '<%= @tour.live_url %>' })
-        </script>
+      </div>
 
-    </div>
+     <div class="col-6 nopadding">
 
-<div class="col nopadding">
       <div id="map-live"
         style="width: 100vw; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
@@ -55,11 +47,5 @@
 
     </div>
   </div>
-</div>
 
-<!-- <div id="map-live"
-  style="width: 50%; height: 450px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<#%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-</div> -->

@@ -7,5 +7,5 @@
 // // Get info about a room
 // console.log(await daily.room(room.name));
 
-const DailyIframe = require('@daily-co/daily-js');
-let callFrame = DailyIframe.wrap(MY_IFRAME);
+// const DailyIframe = require('@daily-co/daily-js');
+// let callFrame = DailyIframe.wrap(MY_IFRAME);
