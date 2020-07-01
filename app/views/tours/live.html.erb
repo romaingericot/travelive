@@ -1,35 +1,32 @@
-<!-- <div class="container-countdown min-vh-100 d-flex align-items-center d-flex justify-content-center">
-  <div class="row">
-    <div id="tour-date" data-datetime='<%#= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
-
-    <div class="container-countdown">
-      <ul>
-        <h1>Votre prochaine aventure débute bientôt</h1>
-        <li><span id="days"></span>Jours</li>
-        <li><span id="hours"></span>Heures</li>
-        <li><span id="minutes"></span>Minutes</li>
-        <li><span id="seconds"></span>Secondes</li>
-      </ul>
-
+<div class="min-vh-100">
+  <div class="container-countdown d-flex align-items-center d-flex justify-content-center"> <!-- min-vh-100 -->
+    <div class="row">
+      <div id="tour-date" data-datetime='<%= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'></div>
+      <div class="container-countdown">
+        <ul>
+          <%= link_to root_path do %>
+            <%= image_tag "undraw_traveling.svg", class: "img-countdown img-fluid pt-5 pb-5" %>
+          <% end %>
+          <h1 class="pt-3">Votre prochaine aventure débute bientôt</h1>
+          <li><span id="days"></span>Jour(s)</li>
+          <li><span id="hours"></span>Heure(s)</li>
+          <li><span id="minutes"></span>Minute(s)</li>
+          <li><span id="seconds"></span>Seconde(s)</li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <div class="container d-flex align-items-center d-flex justify-content-center pt-3">
+    <%= link_to "Voir le détail", tour_path(@tour), class: "btn btn-flat" %>
   </div>
 </div>
 
-<div class="row">
-  <div class="col">
-      <div class="bouton">
-<%#= link_to "Réserver la visite", root_path, class: "btn btn-flat" %>
-</div>
-  </div>
 
-
-</div> -->
-
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col nopadding">
 
-        <!-- <div class="live"> -->
         <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
         <script>
         callFrame = window.DailyIframe.createFrame({
@@ -37,7 +34,6 @@
           showFullscreenButton: true,
           iframeStyle: {
             position: 'fixed',
-            // top: '70px',
             top: '0px',
             bottom: '80px',
             width: '50%',
@@ -46,21 +42,20 @@
         });
         callFrame.join({ url: '<%= @tour.live_url %>' })
         </script>
-        <!-- </div> -->
 
-    </div>
+    </div> -->
 
-    <div class="col nopadding">
+<!--     <div class="col nopadding">
       <div id="map-live"
         style="width: 100vw; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        data-mapbox-api-key="<#%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
 
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- <div id="map-live"
   style="width: 50%; height: 450px;"
