@@ -1,9 +1,8 @@
 <div class="container mt-5">
-<<<<<<< HEAD
+
   <% if !current_user.tours.empty? %>
-=======
-  <% if !@tours.empty? %>
->>>>>>> 0604e694fb08d369dfbc56c54af2e1bbbac620b2
+
+
     <div class="tab-container">
       <h2>Hello <%= current_user.first_name%>, voici tes prochaines visites !</h2>
     </div>
@@ -48,6 +47,12 @@
             <%= simple_form_for [:guide, @tour]  do |f| %>
 
               <div class="form-inputs">
+
+                <% if @tour.images.attached? %>
+                  <%= cl_image_tag @tour.images.key %>
+                <% end %>
+                <%= f.input :photo, as: :file %>
+
                 <%= f.input :name, label: "Nom", required: true %>
                 <%= f.input :city, label: "Ville", required: true %>
                 <%= f.input :country, label: "Pays", required: true %>
@@ -59,9 +64,7 @@
                 <%= f.input :language, label: "Langue", required: true %>
                 <%= f.input :price, label: "Prix", equired: true %>
                 <%= f.input :category,  label: "Catégorie", required: true %>
-                <%= f.input :images, label: "Photo 1", as: :file %>
-                <%= f.input :images, label: "Photo 2", as: :file %>
-                <%= f.input :images, label: "Photo 3", as: :file %>
+
               </div>
 
               <div class="form-actions">
