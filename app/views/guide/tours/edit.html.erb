@@ -1,41 +1,37 @@
-  <div class="container pt-4 pt-md-11">
-  <div class="form pt-8 pt-md-11">
-      <h3>Créeer un nouveau tour</h3>
-      <%= form_for [:guide, @tour] do |f| %>
+<section class="section">
+      <div class="container justify-content-center">
+        <div class="row align-items-center justify-content-center no-gutters min-vh-100">
+          <div class="col-12 col-md-5 col-lg-4 py-8 py-md-11">
+            <div class="connecter">
+              <h2>Créer un tour</h2>
+            </div>
 
-      <%= f.label :name, class: "mt-3" %>
-      <%= f.text_field :name, class: "form-control" %>
+            <%= simple_form_for [:guide, @tour]  do |f| %>
 
-      <%= f.label :city, class: "mt-3" %>
-      <%= f.text_field :city, class: "form-control" %>
+              <div class="form-inputs">
 
-      <%= f.label :country, class: "mt-3" %>
-      <%= f.text_field :country, class: "form-control" %>
 
-      <%= f.label :capacity, class: "mt-3" %>
-      <%= f.number_field :capacity, class: "form-control" %>
 
-      <%= f.label :date, class: "mt-3" %>
-      <%= f.date_field :date, class: "form-control" %>
+                <%= f.input :name, label: "Nom", required: true %>
+                <%= f.input :city, label: "Ville", required: true %>
+                <%= f.input :country, label: "Pays", required: true %>
+                <%= f.input :capacity,  label: "Nombre de visiteurs", required: true %>
+                <%= f.input :date, label: "Date" %>
+                <%= f.input :time, label: "Heure" %>
+                <%= f.input :duration, label: "Durée" %>
+                <%= f.input :description, label: "Description",  required: true %>
+                <%= f.input :language, label: "Langue", required: true %>
+                <%= f.input :price, label: "Prix", equired: true %>
+                <%= f.input :category,  label: "Catégorie", required: true %>
 
-      <%= f.label :time, class: "mt-3"  %>
-      <%= f.time_field :time, class: "form-control" %>
+              </div>
 
-      <%= f.label :duration, class: "mt-3" %>
-      <%= f.number_field :duration, class: "form-control" %>
+              <div class="form-actions">
+                <%= f.button :submit, "Go" %>
+              </div>
+            <% end %>
 
-      <%= f.label :description, class: "mt-3" %>
-      <%= f.text_field :description, class: "form-control" %>
-
-      <%= f.label :language, class: "mt-3" %>
-      <%= f.text_field :language, class: "form-control" %>
-
-      <%= f.label :price, class: "mt-3" %>
-      <%= f.number_field :price, class: "form-control" %>
-
-      <%= f.label :category, class: "mt-3" %>
-      <%= f.text_field :category, class: "form-control" %>
-      <%= f.submit class: "btn btn-flat m-2" %>
-    <% end %>
-    </div>
-</div>
+         </div>
+        </div>
+      </div>
+    </section>
