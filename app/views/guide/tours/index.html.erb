@@ -1,33 +1,218 @@
 <div class="container mt-5">
-  <% if !@user.tours.empty? %>
+  <% if current_user.tours.empty? %>
     <div class="tab-container">
       <h2>Hello <%= current_user.first_name%>, voici tes prochaines visites !</h2>
     </div>
-
-    <% unless @tours.empty? %>
-      <% @tours.each do |tour| %>
-        <div class="card-product">
-          <%= link_to tour_path(tour) do %>
-            <%= cl_image_tag tour.images[0].key %>
-          <% end %>
-          <div class="card-product-infos-link">
-            <div class="card-product-infos">
-              <h2><%= tour.name %></h2>
-              <p><%= tour.date %></p>
-              <p>Durée - <%= tour.duration %> minutes</p>
-              <p>Langue - <%= tour.language.capitalize %></p>
-              <hr>
-            </div>
-            <div class="card-link">
-              <%= link_to "Démarrer", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-1" %>
-              <%= link_to "Changer", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-1" %>
-              <%= link_to "Annuler", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-1" %>
-            </div>
+    <% @tours.each do |tour| %>
+      <div class="card-product">
+        <%= link_to tour_path(tour) do %>
+          <%= cl_image_tag tour.images[0].key %>
+        <% end %>
+        <div class="card-product-infos-link">
+          <div class="card-product-infos">
+            <h2><%= tour.name %></h2>
+            <p><%= tour.date %></p>
+            <p>Durée - <%= tour.duration %> minutes</p>
+            <p>Langue - <%= tour.language.capitalize %></p>
+            <hr>
+          </div>
+          <div class="card-link">
+            <%= link_to "Démarrer", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-1" %>
+            <%= link_to "Changer", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-1" %>
+            <%= link_to "Annuler", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-1" %>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
-    <% else %>
-    <h2>Tu n'as pas encore proposé de visite !</h2>
+
+  <% else %>
+    <div class="tab-container">
+      <h2>Tu n'as pas encore proposé de visite !</h2>
+    </div>
+
+    <div class="container pt-4 pt-md-11">
+      <div class="form pt-8 pt-md-11">
+      <h3>Créer un nouveau tour</h3>
+      <%= form_for [:guide, @tour] do |f| %>
+
+      <%= f.label :name, class: "mt-3" %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :city, class: "mt-3" %>
+      <%= f.text_field :city, class: "form-control" %>
+
+      <%= f.label :country, class: "mt-3" %>
+      <%= f.text_field :country, class: "form-control" %>
+
+      <%= f.label :capacity, class: "mt-3" %>
+      <%= f.number_field :capacity, class: "form-control" %>
+
+      <%= f.label :date, class: "mt-3" %>
+      <%= f.date_field :date, class: "form-control" %>
+
+      <%= f.label :time, class: "mt-3"  %>
+      <%= f.time_field :time, class: "form-control" %>
+
+      <%= f.label :duration, class: "mt-3" %>
+      <%= f.number_field :duration, class: "form-control" %>
+
+      <%= f.label :description, class: "mt-3" %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :language, class: "mt-3" %>
+      <%= f.text_field :language, class: "form-control" %>
+
+      <%= f.label :price, class: "mt-3" %>
+      <%= f.number_field :price, class: "form-control" %>
+
+      <%= f.label :category, class: "mt-3" %>
+      <%= f.text_field :category, class: "form-control" %>
+      <%= f.submit class: "btn btn-flat m-2" %>
+
+
+
+    <% end %>
+    </div>
+  </div>
+
   <% end %>
+
+  <!-- Calendrier guide
+  ================================================== -->
+
+  <div class="tab-container">
+    <div class="calendrier">
+      <h5>Les populaires</h5>
+      <h3>L'aventure continue avec nos guides les plus <strong>populaires</strong>.</h3>
+      <p>Consulter les prochains lives de nos <strong>guides</strong>.</p>
+    </div>
+  </div>
+
+    <div class="container-calendrier">
+      <ul class="card-wrap">
+        <% Tour.first(3).each do |tour|%>
+          <%= link_to tour_path(tour) do %>
+          <li class="card" data-aos="fade-up">
+            <%= cl_image_tag tour.images[0].key %>
+            <div id="triangle3"></div>
+            <div class="card-info">
+              <h5><%= tour.name %></h5>
+              <p><%= tour.date.strftime('%x') %></p>
+              <p><%= tour.time.strftime("%H:%M") %></p>
+              <p><%= tour.duration %> min</p>
+            </div>
+          </li>
+        <% end %>
+        <% end %>
+      </ul>
+  </div>
+
 </div>
+
+
+<!-- TESTIMONIALS
+================================================== -->
+<section class="pt-10 pt-md-12">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 text-center">
+        <!-- Heading -->
+        <div class="testimonial">
+          <h5>Témoignages</h5>
+        </div>
+        <h3>Nos voyageurs <strong>en parlent</strong></h3>
+        <!-- Text -->
+        <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
+      </div>
+    </div> <!-- / .row -->
+    <div class="row" data-aos="fade-up">
+      <div class="col-12">
+        <!-- Card -->
+        <div class="card-testimonial card-row shadow mb-5">
+          <!-- card card-row shadow-light-lg mb-6 -->
+          <div class="row no-gutters">
+            <div class="col-12 col-md-6">
+              <!-- Slider -->
+              <div class="card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
+                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('testimonial.jpg') %>);" href="#!">
+                  <!-- Image (placeholder) -->
+                  <%= link_to root_path, class: "img-fluid d-md-none invisible" do %>
+                    <%= image_tag "photo-1.jpg" %>
+                  <% end %>
+                </a>
+                <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('testimonial.jpg') %>);">
+                  <!-- Image (placeholder) -->
+                  <%= link_to root_path, class: "img-fluid d-md-none invisible" do %>
+                    <%= image_tag "photo-27.jpg" %>
+                  <% end %>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 position-md-static">
+              <!-- Slider -->
+              <div class="position-md-static" data-flickity='{"wrapAround": true, "pageDots": false, "adaptiveHeight": true}' id="testimonialSlider">
+                <div class="w-100">
+                  <!-- Body -->
+                  <div class="card-body">
+                    <blockquote class="blockquote text-center mb-0">
+                      <!-- Brand -->
+                      <div class="row justify-content-center mb-5 mb-md-7">
+                        <div class="col-6 col-sm-4 col-md-7 col-lg-5">
+                          <!-- Logo -->
+                          <div class="img-fluid svg-shim" style="color: #FF5A5F;">
+                            <!-- @@include("../app/assets/images/Voyages.jpg") -->
+                            <%= link_to root_path, class: "navbar-brand" do %>
+                            <%= image_tag "avatar-1.jpg", class: "rounded-circle" %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div> <!-- / .row -->
+                      <!-- Text -->
+                      <p class="mb-5 mb-md-7">
+                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                      </p>
+                      <!-- Footer -->
+                      <footer class="blockquote-footer">
+                        <span class="h6 text-uppercase">Edouard</span>
+                      </footer>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="w-100">
+                  <!-- Body -->
+                  <div class="card-body">
+                    <blockquote class="blockquote text-center mb-0">
+                      <!-- Brand -->
+                      <div class="row justify-content-center mb-5 mb-md-7">
+                        <div class="col-6 col-sm-4 col-md-7 col-lg-5">
+                          <!-- Logo -->
+                          <div class="img-fluid svg-shim" style="color: #3F5D87;">
+                            <%= link_to root_path, class: "navbar-brand" do %>
+                            <%= image_tag "avatar-3.jpg", class: "rounded-circle" %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div> <!-- / .row -->
+                      <!-- Text -->
+                      <p class="mb-5 mb-md-7">
+                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                      </p>
+                      <!-- Footer -->
+                      <footer class="blockquote-footer">
+                        <span class="h6 text-uppercase">Fabiola</span>
+                      </footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- / .row -->
+        </div>
+      </div>
+    </div> <!-- / .row -->
+  </div> <!-- / .container -->
+</section>
+
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
