@@ -6,6 +6,7 @@ class ToursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @tour = Tour.new
     @cities = Tour.all.map { |tour| tour.city }.sort.uniq
     @countries = Tour.all.map { |tour| tour.country }.sort.uniq
     if params[:search].nil?
