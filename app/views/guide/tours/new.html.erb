@@ -13,7 +13,9 @@
                 <% if @tour.images.attached? %>
                   <%= cl_image_tag @tour.images.key %>
                 <% end %>
-                <%= f.input :photo, as: :file %>
+                <%= f.input :images, as: :file %>
+                <%= f.input :images, as: :file %>
+                <%= f.input :images, as: :file %>
 
                 <%= f.input :name, label: "Nom", required: true %>
                 <%= f.input :city, label: "Ville", required: true %>
