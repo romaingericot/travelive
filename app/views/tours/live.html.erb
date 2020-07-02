@@ -37,8 +37,9 @@
      <div class="col-6 nopadding">
 
       <div id="map-live"
-        style="width: 100vw; height: 100vh; position: fixed; top: 88px"
+        style="width: 50vw; height: 100vh; position: fixed; top: 88px"
         data-markers="<%= @markers.to_json %>"
+        data-tour="<%= @tour.id %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
