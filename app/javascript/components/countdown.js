@@ -14,9 +14,8 @@ const initCountDown = () => {
   if (tourDate) {
     const setTourDate = tourDate.dataset.datetime;
 
-    // let countDown = new Date(`${setTourDate}`).getTime(),
     // let countDown = new Date(`Jul 1, 2020 10:34:00`).getTime(),
-    let countDown = new Date(`Jul 1, 2020 10:34:00`).getTime(),
+    let countDown = new Date(`${setTourDate}`).getTime(),
 
     x = setInterval(function() {
 

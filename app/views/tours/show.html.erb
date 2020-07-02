@@ -114,7 +114,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
-    <div class="body-container" data-aos="fade-up">
+    <div class="body-container">
       <div class="presentation">
         <h5>Présentation de la visite</h5>
         <h3>Description détaillée par votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
@@ -231,7 +231,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <% @guide_tours.each do |tour|%>
           <% if tour.id != @tour.id %>
             <%= link_to tour_path(tour) do %>
-            <li class="card" data-aos="fade-up">
+            <li class="card">
               <%= cl_image_tag tour.images[0].key %>
               <div id="triangle3"></div>
     <div class="card-click"
@@ -283,7 +283,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
       </div>
     </div> <!-- / .row -->
-    <div class="row" data-aos="fade-up">
+    <div class="row">
       <div class="col-12">
         <!-- Card -->
         <div class="card-testimonial card-row shadow mb-5">
@@ -327,11 +327,11 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
                       </div> <!-- / .row -->
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                        “ Travelive c'est une grande communauté de voyageurs et de guides locaux passionnés. ”
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Edouard</span>
+                        <span class="h6 text-uppercase">Antoine</span>
                       </footer>
                     </blockquote>
                   </div>
@@ -353,11 +353,11 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
                       </div> <!-- / .row -->
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                        “ Vivez des expériences de voyage incroyables aux quatre coins du monde sur Travelive. ”
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Fabiola</span>
+                        <span class="h6 text-uppercase">Charles-Henri</span>
                       </footer>
                     </blockquote>
                   </div>

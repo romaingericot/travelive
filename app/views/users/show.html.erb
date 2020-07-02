@@ -74,7 +74,7 @@
       <ul class="card-wrap">
         <% Tour.first(3).each do |tour|%>
           <%= link_to tour_path(tour) do %>
-          <li class="card" data-aos="fade-up">
+          <li class="card">
             <%= cl_image_tag tour.images[0].key %>
             <div id="triangle3"></div>
    <div class="card-click"
@@ -127,7 +127,7 @@
         <p>Ne nous croyez pas sur parole. Nos voyageurs sont ceux qui en parlent le mieux.</p>
       </div>
     </div> <!-- / .row -->
-    <div class="row" data-aos="fade-up">
+    <div class="row">
       <div class="col-12">
         <!-- Card -->
         <div class="card-testimonial card-row shadow mb-5">
@@ -171,11 +171,11 @@
                       </div> <!-- / .row -->
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                        “ Travelive c'est une grande communauté de voyageurs et de guides locaux passionnés. ”
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Edouard</span>
+                        <span class="h6 text-uppercase">Antoine</span>
                       </footer>
                     </blockquote>
                   </div>
@@ -197,11 +197,11 @@
                       </div> <!-- / .row -->
                       <!-- Text -->
                       <p class="mb-5 mb-md-7">
-                        “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique perferendis numquam voluptatem fugit sequi tenetur ad inventore ducimus aut commodi.”
+                        “ Vivez des expériences de voyage incroyables aux quatre coins du monde sur Travelive. ”
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Fabiola</span>
+                        <span class="h6 text-uppercase">Charles-Henri</span>
                       </footer>
                     </blockquote>
                   </div>

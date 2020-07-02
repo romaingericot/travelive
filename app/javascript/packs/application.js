@@ -30,8 +30,6 @@ import {
     jarallax,
     jarallaxVideo
 } from 'jarallax';
-import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
@@ -47,7 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initUpdateNavbarOnScroll();
   initMapbox();
-  AOS.init();
   jarallaxVideo();
   liveTimer();
   initCountDown();
