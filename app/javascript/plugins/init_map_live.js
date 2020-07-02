@@ -6,22 +6,21 @@ const initMapboxLive = () => {
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.longitude, marker.latitude ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
+    map.fitBounds(bounds, { padding: 70, maxZoom: 14, duration: 0 });
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map-live',
-      style: 'mapbox://styles/mapbox/streets-v10',
+      style: 'mapbox://styles/fguilloucamargo/ckc4mqzw20uuo1ik1gj3d3yd0',
     });
 
     fetch(`/guide/tours/${mapElement.dataset.tour}/checkpoints`)
     .then(response => response.json())
     .then((data) => {
       data.forEach((checkpoint) => {
-        console.log('inside')
-        const popup = new mapboxgl.Popup().setHTML(checkpoint.infoWindow);
+        const popup = new mapboxgl.Popup().setHTML(`<div class="pop-up"><h4>${checkpoint.name}</h4><p>${checkpoint.description}</p></div>`);
         if(checkpoint.progress === 0){
           new mapboxgl.Marker({color: '#CC3363', scale: 0.7})
             .setLngLat([checkpoint.longitude, checkpoint.latitude ])
@@ -42,8 +41,7 @@ const initMapboxLive = () => {
       .then(response => response.json())
       .then((data) => {
         data.forEach((checkpoint) => {
-          console.log('inside')
-          const popup = new mapboxgl.Popup().setHTML(checkpoint.infoWindow);
+          const popup = new mapboxgl.Popup().setHTML(`<div class="pop-up"><h4>${checkpoint.name}</h4><p>${checkpoint.description}</p></div>`);
           if(checkpoint.progress === 0){
             new mapboxgl.Marker({color: '#CC3363', scale: 0.7})
               .setLngLat([checkpoint.longitude, checkpoint.latitude ])
