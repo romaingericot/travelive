@@ -16,6 +16,27 @@ const initMapboxLive = () => {
       style: 'mapbox://styles/mapbox/streets-v10',
     });
 
+    fetch(`/guide/tours/${mapElement.dataset.tour}/checkpoints`)
+    .then(response => response.json())
+    .then((data) => {
+      data.forEach((checkpoint) => {
+        console.log('inside')
+        const popup = new mapboxgl.Popup().setHTML(checkpoint.infoWindow);
+        if(checkpoint.progress === 0){
+          new mapboxgl.Marker({color: '#CC3363', scale: 0.7})
+            .setLngLat([checkpoint.longitude, checkpoint.latitude ])
+            .setPopup(popup)
+            .addTo(map);
+        } else {
+          new mapboxgl.Marker({color: 'grey', scale: 0.7})
+            .setLngLat([checkpoint.longitude, checkpoint.latitude ])
+            .setPopup(popup)
+            .addTo(map);
+        };
+       fitMapToMarkers(map, data);
+      });
+    });
+
     const checkpointFetch = () => {
       fetch(`/guide/tours/${mapElement.dataset.tour}/checkpoints`)
       .then(response => response.json())
@@ -35,11 +56,10 @@ const initMapboxLive = () => {
               .addTo(map);
           };
         });
-        fitMapToMarkers(map, data);
       });
     };
 
-    setInterval(checkpointFetch, 1000)
+    setInterval(checkpointFetch, 5000)
 
     window.setTimeout(() => {
       map.resize()
