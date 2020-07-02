@@ -16,9 +16,11 @@
           <div class="card-product-infos-link">
             <div class="card-product-infos">
               <h2><%= booking.tour.name %></h2>
-              <p><%= booking.tour.date %></p>
-              <p>Durée - <%= booking.tour.duration %> minutes</p>
-              <p>Langue - <%= booking.tour.language.capitalize %></p>
+              <p><i class="far fa-calendar-alt"></i> <%= l(booking.tour.date, format: :long) %></p>
+              <p><i class="far fa-clock"></i> <%= booking.tour.time.strftime("%H:%M") %> </p>
+              <p><i class="fas fa-hourglass-half"></i> <%= booking.tour.duration %> minutes</p>
+              <p><i class="fas fa-language"></i> <%= booking.tour.language.capitalize %></p>
+              <p><i class="fas fa-users"></i> <%= booking.tour.capacity%></p>
             </div>
             <div class="card-link">
               <%= link_to "Rejoindre par ordinateur", tour_live_path(booking.tour), class: "btn btn-flat m-1" %>
@@ -96,11 +98,11 @@
         <%= tour.city%></p>
 
       <p>
-        <i class="far fa-clock text-center"></i>
+        <i class="fas fa-hourglass-half"></i>
         <%= tour.duration %> min</p>
-      <p>
-        <i class="fa fa-language" aria-hidden="true"></i>
-        <%= tour.language.capitalize %></p>
+          <p>
+        <i class="far fa-clock"></i>
+        <%= tour.time.strftime("%H:%M") %></p>
     </div>
           <% end %>
         <% end %>
