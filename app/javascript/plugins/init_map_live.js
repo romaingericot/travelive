@@ -4,9 +4,9 @@ const initMapboxLive = () => {
   const mapElement = document.getElementById('map-live');
 
   const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
+    const bounds = new mapboxgl.LngLatBounds();
+    markers.forEach(marker => bounds.extend([ marker.longitude, marker.latitude ]));
+    map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -16,22 +16,31 @@ const initMapboxLive = () => {
       style: 'mapbox://styles/mapbox/streets-v10',
     });
 
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      if(marker.progress === 0){
-        new mapboxgl.Marker({color: '#CC3363', scale: 0.7})
-          .setLngLat([ marker.lng, marker.lat ])
-          .setPopup(popup)
-          .addTo(map);
-      } else {
-        new mapboxgl.Marker({color: 'grey', scale: 0.7})
-          .setLngLat([ marker.lng, marker.lat ])
-          .setPopup(popup)
-          .addTo(map);
-      };
-      fitMapToMarkers(map, markers);
-    });
+    const checkpointFetch = () => {
+      fetch(`/guide/tours/${mapElement.dataset.tour}/checkpoints`)
+      .then(response => response.json())
+      .then((data) => {
+        data.forEach((checkpoint) => {
+          console.log('inside')
+          const popup = new mapboxgl.Popup().setHTML(checkpoint.infoWindow);
+          if(checkpoint.progress === 0){
+            new mapboxgl.Marker({color: '#CC3363', scale: 0.7})
+              .setLngLat([checkpoint.longitude, checkpoint.latitude ])
+              .setPopup(popup)
+              .addTo(map);
+          } else {
+            new mapboxgl.Marker({color: 'grey', scale: 0.7})
+              .setLngLat([checkpoint.longitude, checkpoint.latitude ])
+              .setPopup(popup)
+              .addTo(map);
+          };
+        });
+        fitMapToMarkers(map, data);
+      });
+    };
+
+    setInterval(checkpointFetch, 1000)
+
     window.setTimeout(() => {
       map.resize()
     }, 1000)
