@@ -160,12 +160,21 @@ nyc.images.attach(io: photo5_edouard, filename: 'photo.jpeg', content_type: 'ima
 nyc.images.attach(io: photo6_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
 nyc.save!
 
+<<<<<<< HEAD
+photo4_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593095815/richard-sagredo-ZC2PWF4jTHc-unsplash_gb5nfm.jpg")
+photo7_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593528084/m93id755fy8soif0mfd1kgm23mlp.jpg")
+photo8_edouard = URI.open("https://res.cloudinary.com/dzghetxbv/image/upload/v1593174689/todd-cravens-lwACYK8ScmA-unsplash_lc1kji.jpg")
+húsavík.images.attach(io: photo4_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
+húsavík.images.attach(io: photo7_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
+húsavík.images.attach(io: photo8_edouard, filename: 'photo.jpeg', content_type: 'image/jpeg')
+=======
 romain75 = URI.open("https://res.cloudinary.com/dlwpvvdub/image/upload/v1593679747/Husavik_p103v3.jpg")
 romain76 = URI.open("https://res.cloudinary.com/dlwpvvdub/image/upload/v1593679747/Husavik1_vfvtua.jpg")
 romain77 = URI.open("https://res.cloudinary.com/dlwpvvdub/image/upload/v1593679748/Husavik3_zxftpu.jpg")
 húsavík.images.attach(io: romain75, filename: 'photo.jpeg', content_type: 'image/jpeg')
 húsavík.images.attach(io: romain76, filename: 'photo.jpeg', content_type: 'image/jpeg')
 húsavík.images.attach(io: romain77, filename: 'photo.jpeg', content_type: 'image/jpeg')
+>>>>>>> 3879bd94459c590789e4676801eb2823798d648a
 húsavík.save!
 
 romain51 = URI.open("https://res.cloudinary.com/dlwpvvdub/image/upload/v1593679749/Recife1_es0mrb.jpg")

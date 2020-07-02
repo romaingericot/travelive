@@ -14,11 +14,11 @@
         <%= tour.city%></p>
 
       <p>
-        <i class="far fa-clock text-center"></i>
+        <i class="fas fa-hourglass-half"></i>
         <%= tour.duration %> min</p>
       <p>
-        <i class="fa fa-language" aria-hidden="true"></i>
-        <%= tour.language.capitalize %></p>
+        <i class="far fa-clock"></i>
+        <%= tour.time.strftime("%H:%M") %></p>
     </div>
     <hr>
     <div class="card-inline">
