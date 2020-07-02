@@ -20,7 +20,7 @@
             <hr>
           </div>
           <div class="card-link">
-            <%= link_to "Démarrer", "https://travelive.daily.co/A10gZsu1NrLQxfd2wfgf", target: "_blank", class: "btn btn-flat m-1" %>
+            <%= link_to "Démarrer", guide_tour_live_path(tour), target: "_blank", class: "btn btn-flat m-1" %>
             <%= link_to "Changer", edit_guide_tour_path(tour) , method: :get, class: "btn btn-flat m-1" %>
             <%= link_to "Annuler", guide_tour_path(tour) , method: :delete, class: "btn btn-flat m-1" %>
           </div>
