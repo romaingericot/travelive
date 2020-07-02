@@ -32,6 +32,9 @@ const initMapboxLive = () => {
       };
       fitMapToMarkers(map, markers);
     });
+    window.setTimeout(() => {
+      map.resize()
+    }, 1000)
   };
 };
 
