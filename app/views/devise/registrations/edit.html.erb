@@ -24,6 +24,8 @@
                         hint: "Laissez-le vide si vous ne voulez pas le changer",
                         required: false,
                         input_html: { autocomplete: "new-password" } %>
+            <%= f.input :description,
+                      input_html: { autocomplete: "desciption" }%>
             <%= f.input :password_confirmation,
                         label: 'Confirme ton mot passe',
                         required: false,
