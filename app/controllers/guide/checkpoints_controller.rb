@@ -5,9 +5,7 @@ class Guide::CheckpointsController < ApplicationController
 
   def update
     @checkpoint = Checkpoint.find(params[:id])
-    @checkpoint.progress = 1
-    if @checkpoint.save
-      redirect_to guide_tour_live_path(@checkpoint.tour)
-    end
+    @checkpoint.progress == 0 ? @checkpoint.progress = 1 : @checkpoint.progress = 0
+    @checkpoint.save
   end
 end

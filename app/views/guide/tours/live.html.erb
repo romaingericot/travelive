@@ -1,11 +1,50 @@
 
-
-<div class="card">
-  <% @checkpoints.each do |checkpoint| %>
-    <%= simple_form_for([:guide, checkpoint], remote: true) do |f| %>
-      <p><%= checkpoint.name %> </p>
-      <%= f.submit "Done" %>
-    <% end %>
-  <% end %>
+<div id="counter-video" class="min-vh-100">
+  <div class="container-countdown d-flex align-items-center d-flex justify-content-center">
+    <div class="row">
+      <div id="tour-date"
+        data-datetime='<%= "#{@tour.date.strftime('%b %d, %Y')} #{@tour.time.strftime('%H:%M:%S')}" %>'
+        data-liveurl='<%= @tour.live_url %>'>
+    </div>
+    <div class="container-countdown">
+      <ul>
+        <%= link_to root_path do %>
+          <%= image_tag "undraw_traveling.svg", class: "img-countdown img-fluid pt-5 pb-5" %>
+        <% end %>
+        <h1 class="pt-3">Votre prochaine aventure débute bientôt</h1>
+        <li><span id="days"></span>Jour(s)</li>
+        <li><span id="hours"></span>Heure(s)</li>
+        <li><span id="minutes"></span>Minute(s)</li>
+        <li><span id="seconds"></span>Seconde(s)</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
+  <div class="container-countdown d-flex align-items-center d-flex justify-content-center pt-3">
+    <%= link_to "Voir le détail", tour_path(@tour), class: "btn btn-flat" %>
+  </div>
+</div>
+
+
+<div id="container-map-video" class="container d-none">
+
+  <div class="row">
+      <div class="col-6">
+
+      </div>
+
+     <div class="col-6 container-checkpoint">
+      <% @checkpoints.each do |checkpoint| %>
+        <%= simple_form_for([:guide, checkpoint], remote: true) do |f| %>
+          <p><%= checkpoint.name %> <%= "(Checked)" if checkpoint.progress == 1  %> </p>
+          <%= f.submit "Done" %>
+        <% end %>
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
