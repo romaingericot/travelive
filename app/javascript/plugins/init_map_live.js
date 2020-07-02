@@ -40,6 +40,10 @@ const initMapboxLive = () => {
     };
 
     setInterval(checkpointFetch, 1000)
+
+    window.setTimeout(() => {
+      map.resize()
+    }, 1000)
   };
 };
 

@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def show
     @booking = Booking.all
+    @booking_tours = Booking.where(user_id: @tour.user_id)
   end
 
   def create

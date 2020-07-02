@@ -169,16 +169,34 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
     </div>
   </div>
 
-  <div class="tab-container">
-    <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
-  </div>
-  <div class="bouton">
-    <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
-  </div>
+  <!-- booking
+  ================================================== -->
+  <% if current_user.bookings.map {|b| b.tour_id}.include?(@tour.id) %>
+    <div class="tab-container">
+      <h3>Tu as déjà réservé cette <strong>visite</strong>.</h3>
+    </div>
+    <div class="bouton">
+      <%= link_to "Dashboard", user_path(current_user), class: "btn btn-flat" %>
+    </div>
+  <% else %>
+    <div class="tab-container">
+      <h3>La vraie aventure commence <strong>maintenant</strong>.</h3>
+    </div>
+    <div class="bouton">
+      <%= link_to "Réserver la visite", tour_bookings_path(@tour), method: :post, class: "btn btn-flat" %>
+    </div>
+  <% end %>
+
+  <!-- banner -->
+
   <div id="triangle0"></div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
   </div>
+
+  <!-- Calendrier guide
+  ================================================== -->
+
   <div class="tab-container">
     <div class="calendrier">
       <h5>Calendrier</h5>
@@ -189,18 +207,40 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 
     <div class="container-calendrier">
       <ul class="card-wrap">
-        <% Tour.where(user_id: @tour.user_id).each do |tour|%>
-        <%= link_to tour_path(tour) do %>
-          <li class="card" data-aos="fade-up">
-            <%= cl_image_tag tour.images[0].key %>
-            <div id="triangle3"></div>
-            <div class="card-info">
-              <h5><%= tour.name %></h5>
-              <p><%= tour.date.strftime('%x') %></p>
-              <p><%= tour.time.strftime("%H:%M") %></p>
-              <p><%= tour.duration %> min</p>
-            </div>
-          </li>
+        <% @guide_tours.each do |tour|%>
+          <% if tour.id != @tour.id %>
+            <%= link_to tour_path(tour) do %>
+            <li class="card" data-aos="fade-up">
+              <%= cl_image_tag tour.images[0].key %>
+              <div id="triangle3"></div>
+    <div class="card-click"
+    style= "width: 248px;">
+
+    <h6><%= tour.name %></h6>
+
+    <div class="card-info" style="
+    padding-right: 20‒;
+    padding-left: 29px;
+    padding-right: _50;
+    padding-right: -50;
+    padding-right: -11;
+    width: 259px;
+    height: 88px;">
+      <p>
+        <i class="far fa-calendar-alt"></i>
+        <%= l(tour.date, format: :short) %></p>
+      <p>
+        <i class="fas fa-map-marked-alt"></i>
+        <%= tour.city%></p>
+
+      <p>
+        <i class="far fa-clock text-center"></i>
+        <%= tour.duration %> min</p>
+      <p>
+        <i class="fa fa-language" aria-hidden="true"></i>
+        <%= tour.language.capitalize %></p>
+    </div>
+          <% end %>
         <% end %>
         <% end %>
       </ul>
@@ -270,7 +310,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Fabiola</span>
+                        <span class="h6 text-uppercase">Edouard</span>
                       </footer>
                     </blockquote>
                   </div>
@@ -296,7 +336,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
                       </p>
                       <!-- Footer -->
                       <footer class="blockquote-footer">
-                        <span class="h6 text-uppercase">Edouard</span>
+                        <span class="h6 text-uppercase">Fabiola</span>
                       </footer>
                     </blockquote>
                   </div>

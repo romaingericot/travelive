@@ -15,6 +15,7 @@ const initCountDown = () => {
     const setTourDate = tourDate.dataset.datetime;
 
     // let countDown = new Date(`${setTourDate}`).getTime(),
+    // let countDown = new Date(`Jul 1, 2020 10:34:00`).getTime(),
     let countDown = new Date(`Jul 1, 2020 10:34:00`).getTime(),
 
     x = setInterval(function() {
@@ -33,10 +34,10 @@ const initCountDown = () => {
             showFullscreenButton: true,
             iframeStyle: {
               position: 'fixed',
-              top: '0px',
+              top: '88px',
               bottom: '80px',
               width: '50%',
-              height: '100vh'
+              height: '89vh'
             }
           });
           callFrame.join({ url: tourDate.dataset.liveurl })

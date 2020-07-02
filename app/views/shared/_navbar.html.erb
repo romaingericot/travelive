@@ -29,6 +29,7 @@
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Guideboard", guide_tours_path, class: "dropdown-item" %>
             <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

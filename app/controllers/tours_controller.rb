@@ -3,7 +3,7 @@ require 'net/http'
 require 'openssl'
 
 class ToursController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @cities = Tour.all.map { |tour| tour.city }.sort.uniq
@@ -25,6 +25,7 @@ class ToursController < ApplicationController
   def show
     I18n.locale = :fr
     @tour = Tour.find(params[:id])
+    @guide_tours = Tour.where(user_id: @tour.user_id)
   end
 
   def new
@@ -45,8 +46,7 @@ class ToursController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request["content-type"] = 'application/json'
     request["authorization"] = "Bearer #{ENV['DAILY_API_KEY']}"
-    request.body = "{\"properties\":{\"max_participants\":10,\"enable_chat\":true,\"enable_knocking\":true,\"lang\":\"fr\"},\"privacy\":\"public\"}"
-    # request.body = "{\"properties\":{\"max_participants\":15,\"enable_knocking\":true,\"enable_screenshare\":true,\"enable_chat\":true,\"start_video_off\":true,\"start_audio_off\":true}}"
+    request.body = "{\"properties\":{\"max_participants\":20,\"enable_chat\":true,\"enable_screenshare\":true,\"enable_chat\":true,\"lang\":\"fr\"},\"privacy\":\"public\"}"
 
     response = http.request(request)
     # puts response.read_body
