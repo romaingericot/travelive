@@ -21,7 +21,7 @@
             <%= f.input :gender, label: 'Genre', collection: User::GENDER %>
             <%= f.input :password,
                         label: 'Mot de passe',
-                        hint: "leave it blank if you don't want to change it",
+                        hint: "Laissez-le vide si vous ne voulez pas le changer",
                         required: false,
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
@@ -30,7 +30,7 @@
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :current_password,
                         label: 'Mot de passe actuel',
-                        hint: "we need your current password to confirm your changes",
+                        hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
                         required: true,
                         input_html: { autocomplete: "current-password" } %>
           </div>
@@ -43,7 +43,7 @@
         <div class="connecter">
           <h3>Supprimer ton compte</h3>
 
-          <p>Pas content? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es tu sur ?" }, method: :delete %></p>
+          <p>Pas content? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Es-tu sûr ?" }, method: :delete %></p>
 
           <p> <%= link_to "Retour", :back %> </p>
         </div>
