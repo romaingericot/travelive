@@ -31,7 +31,7 @@ import {
     jarallaxVideo
 } from 'jarallax';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
