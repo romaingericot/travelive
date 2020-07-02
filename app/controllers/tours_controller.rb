@@ -77,7 +77,7 @@ class ToursController < ApplicationController
   private
 
   def tour_params
-    params.require(:tour).permit(:name, :city, :country, :capacity, :date, :time, :duration, :description, :language, :category, :price)
+    params.require(:tour).permit(:name, :city, :country, :capacity, :date, :time, :duration, :description, :language, :category, :price, :images)
   end
 
   def set_markers(tours)
