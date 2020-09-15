@@ -1,0 +1,5 @@
+meta_product_name: "Travelive"
+meta_title: "Travelive - Voyage depuis ton sofa"
+meta_description: "Une plateforme pour connecter les gens avec des guides locaux du monde entier pour vous permettre de visiter en direct les plus beaux endroits du monde."
+meta_image: "travelive_cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
