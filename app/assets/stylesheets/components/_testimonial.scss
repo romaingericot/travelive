@@ -70,3 +70,12 @@
 .shape-fluid-y > * {
   width: auto;
   height: 100%; }
+
+@media(max-width: 768px) {
+  .blockquote {
+    padding: 48px;
+  }
+  #responsive-card-img-slider {
+    display: none;
+  }
+}
