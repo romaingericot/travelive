@@ -86,7 +86,18 @@ strong {
     flex-direction: column;
     width: auto;
   }
-  .rmt-500 {
+  .body-container .presentation {
+    width: auto;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .body-container .price {
+    justify-content: space-around;
+  }
+  .slider {
+    width: 100%;
+  }
+  #rmt-500 {
     margin-top: 500px;
   }
   #responsive-h5 {
@@ -94,5 +105,8 @@ strong {
   }
   .container-calendrier {
     width: auto;
+  }
+  .tab-container h3 {
+    text-align: center;
   }
 }
