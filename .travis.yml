@@ -1,20 +1,16 @@
 language: ruby
 cache:
-  bundler: true
-  yarn: true
+  - bundler
+  - yarn
 services:
-  - redis-server
-sudo: required
+  - postgresql
 before_install:
-- sudo apt-get update
-- sudo apt-get install google-chrome-stable
-addons:
-  postgresql: '9.6'
+  - nvm install --lts
 before_script:
-  - psql -c 'create database product_hunt_clone_test;' -U postgres
-script:
+  - bundle install --jobs=3 --retry=3
+  - yarn
+  - bundle exec rake db:create
   - bundle exec rake db:schema:load
-  - bundle exec rake db:test:prepare
-  - SECRET_KEY_BASE=a RAILS_ENV=production bundle exec rake assets:precompile
+script:
   - bundle exec rake test
   - bundle exec rake test:system
