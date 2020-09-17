@@ -11,12 +11,21 @@ const initMapbox = () => {
     };
     if (mapElement) { // only build a map if there's a div#map to inject into
       mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-      const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/fguilloucamargo/ckbt4oswm0jqq1jnrnacxwpan',
-        center: [0, 15],
-        zoom: 0.99
-      });
+      if (screen.width >= 768) {
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/fguilloucamargo/ckbt4oswm0jqq1jnrnacxwpan',
+          center: [0, 15],
+          zoom: 0.99
+        });
+      } else {
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/fguilloucamargo/ckbt4oswm0jqq1jnrnacxwpan',
+          center: [-20, 10],
+          zoom: 0
+        });
+      }
       const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);

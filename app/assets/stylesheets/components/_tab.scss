@@ -54,3 +54,10 @@
   text-align: center;
   color: #CC3363;
 }
+
+@media(max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+}

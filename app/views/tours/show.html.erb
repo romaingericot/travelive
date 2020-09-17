@@ -94,8 +94,8 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
   <div class="tab-container">
     <ul class="list-inline tabs">
       <li>
-        <p class="tab"><i class="far fa-calendar-alt"></i></p>
-        <p class="infos"><%= @tour.date.strftime('%x') %></p>
+        <p class="tab"> <i class="far fa-calendar-alt"></i></p>
+        <p class="infos"><%= l(@tour.date, format: :short) %></p>
       </li>
       <li>
         <p class="tab"><i class="far fa-clock"></i></p>
@@ -114,7 +114,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <p class="infos"><%= @tour.capacity %>prs</p>
       </li>
     </ul>
-    <div class="body-container">
+    <div class="body-container" id="rmt-500">
       <div class="presentation">
         <h5>Présentation de la visite</h5>
         <h3>Description détaillée par votre guide <strong> <%= @tour.user.first_name %> </strong></h3>
@@ -162,7 +162,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
         <% end %>
       </div>
       <div class="presentation">
-        <h5>Votre guide</h5>
+        <h5 id="responsive-h5">Votre guide</h5>
         <h3>Qui est votre guide <strong> <%= @tour.user.first_name %> </strong> ?</h3>
         <p><%= @tour.user.description %> </p>
       </div>
@@ -211,7 +211,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
   <!-- banner -->
 
   <div id="triangle0"></div>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images.last.key %>);">
+  <div class="banner" id="mid-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @tour.images.last.key %>);">
   <div id="triangle2"></div>
   </div>
 
@@ -291,7 +291,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
           <div class="row no-gutters">
             <div class="col-12 col-md-6">
               <!-- Slider -->
-              <div class="card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
+              <div class="card-img-slider" id="responsive-card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
                 <a class="card-img-left bg-cover" style="background-image: url(<%= asset_path('testimonial.jpg') %>);" href="#!">
                   <!-- Image (placeholder) -->
                   <%= link_to root_path, class: "img-fluid d-md-none invisible" do %>

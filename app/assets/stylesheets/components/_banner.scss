@@ -71,3 +71,12 @@
     border-right: 1420px solid transparent;
     border-top: 130px solid #f4f4f4;
 }
+
+@media(max-width: 768px) {
+  #triangle, #triangle0, #triangle2 {
+    display: none;
+  }
+  #mid-banner {
+    margin-top: 100px;
+  }
+}
