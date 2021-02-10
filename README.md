@@ -1,7 +1,7 @@
+# 🗺 Travelive
+
 Rails app created at [Le Wagon coding bootcamp](https://www.lewagon.com).
 
-Travelive is an innovative travel app.
-Through technology - mapping and live video - we try to reinvent travel.
+Created by [Romain Géricot](https://www.romaingericot.fr), Fabiola Guillou-Camargo, Jérôme Toulouse and Edouard Couten.
 
 [Visit the website](https://www.travelive.fr)
-
